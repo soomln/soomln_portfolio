@@ -1,0 +1,121 @@
+@use "../abstracts" as *;
+
+.cursor {
+  display: none;
+}
+
+.has-cursor {
+  &,
+  a,
+  button {
+    cursor: none;
+  }
+
+  .cursor {
+    display: block;
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 1000;
+    pointer-events: none;
+  }
+}
+
+.cursor__dot,
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.cursor__dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: $c-black;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.cursor__ring {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border: 1px solid rgba($c-black, 0.5);
+  transition:
+    width 0.45s $ease-out,
+    height 0.45s $ease-out,
+    margin 0.45s $ease-out,
+    background-color 0.35s,
+    border-color 0.35s;
+}
+
+.cursor__label {
+  font: 700 12px/1 $f-sans;
+  letter-spacing: 0.12em;
+  color: $c-dark;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s, transform 0.45s $ease-out;
+}
+
+// States
+.cursor.is-hover .cursor__ring {
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  background: rgba($c-lime, 0.25);
+  border-color: $c-lime;
+}
+
+.cursor.is-view {
+  .cursor__ring {
+    width: 96px;
+    height: 96px;
+    margin: -48px 0 0 -48px;
+    background: $c-lime;
+    border-color: $c-lime;
+  }
+
+  .cursor__label {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .cursor__dot {
+    opacity: 0;
+  }
+}
+
+.cursor.is-light {
+  .cursor__dot {
+    background: $c-white;
+  }
+
+  .cursor__ring {
+    border-color: rgba($c-white, 0.5);
+  }
+}
+
+.cursor.is-hidden {
+  opacity: 0;
+}
+
+// Scroll progress
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 999;
+  height: 3px;
+  pointer-events: none;
+
+  &__bar {
+    display: block;
+    height: 100%;
+    background: $c-lime;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}

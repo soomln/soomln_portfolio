@@ -1,0 +1,204 @@
+@use "../abstracts" as *;
+
+.works {
+  &__count {
+    position: absolute;
+    top: u(132);
+    right: u(18);
+    font-family: $f-display;
+    @include type(400, 64, 64);
+  }
+
+  &__grid {
+    @include pos(18, 306, 1404);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: u(24);
+  }
+
+  // Placeholder for upcoming projects: fills the remaining columns.
+  // When a new project is added, shrink the span (3 → 2 → 1) or remove it.
+  &__soon {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: u(32) u(36);
+    border: 1px dashed rgba($c-black, 0.35);
+    border-radius: u(20);
+    transition:
+      background-color 0.5s $ease-out,
+      border-color 0.5s $ease-out;
+
+    &:hover {
+      background: rgba($c-white, 0.55);
+      border-color: $c-black;
+    }
+  }
+
+  &__soon-top,
+  &__soon-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include type(500, 15, 22, 0.6);
+    color: $c-gray-light;
+  }
+
+  &__soon-top {
+    @include type(700, 15, 22, 1.2);
+    color: $c-black;
+  }
+
+  // one column wide: stack the note above the date instead of side by side
+  &__soon-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: u(16);
+  }
+
+  &__soon-bottom p {
+    @include type(500, 18, 28, -0.36);
+    color: $c-gray;
+    word-break: keep-all;
+  }
+
+  &__soon-title {
+    font-family: $f-display;
+    // one grid column wide now (was 150/140 at span 2)
+    @include type(400, 84, 80, 1);
+    color: $c-black;
+  }
+}
+
+.work-card {
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: u(16);
+  }
+
+  &__thumb {
+    position: relative;
+    height: u(440);
+    border-radius: u(20);
+    background: $c-dark;
+    overflow: hidden;
+    transition: border-radius 0.6s $ease-out, translate 0.6s $ease-out;
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition:
+      scale 1.2s $ease-out,
+      opacity 0.6s $ease-out;
+
+    // a screenshot of the site's contact section: keep the statue in frame
+    &--site {
+      object-position: 82% center;
+      opacity: 0.85;
+    }
+
+    // detail-page intro (portrait, same ratio as the card)
+    &--daylong,
+    &--roll36 {
+      object-position: center;
+      opacity: 0.9;
+    }
+  }
+
+  &__tag {
+    @include pos(20, 20);
+    padding: u(6) u(14);
+    border-radius: 999px;
+    background: $c-lime;
+    color: $c-dark;
+    @include type(700, 13, 19, 0.52);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: u(20);
+    right: u(20);
+    display: grid;
+    place-items: center;
+    @include circle(48);
+    background: $c-white;
+    color: $c-dark;
+    @include type(500, 22, 22);
+    transition:
+      background-color 0.4s $ease-out,
+      rotate 0.5s $ease-out;
+  }
+
+  &__num {
+    position: absolute;
+    left: u(20);
+    bottom: u(20);
+    font-family: $f-display;
+    @include type(400, 150, 150);
+    color: $c-white;
+    transition:
+      translate 0.7s $ease-out,
+      color 0.4s;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    @include type(500, 15, 22, 0.6);
+    color: $c-gray-light;
+  }
+
+  &__title {
+    @include type(700, 26, 34, -0.52);
+    color: $c-black;
+    background: linear-gradient($c-black, $c-black) left bottom / 0 2px no-repeat;
+    justify-self: start;
+    width: fit-content;
+    transition: background-size 0.5s $ease-out;
+  }
+
+  &__desc {
+    @include type(400, 15, 24, -0.3);
+    color: $c-gray-light;
+    word-break: keep-all;
+  }
+
+  &__tools {
+    padding-top: u(16);
+    border-top: 1px solid rgba($c-black, 0.35);
+    @include type(500, 13, 19, 0.78);
+    color: $c-black;
+  }
+
+  &__link:hover {
+    .work-card__thumb {
+      border-radius: u(40);
+    }
+
+    .work-card__img {
+      scale: 1.08;
+      opacity: 0.85;
+    }
+
+    .work-card__arrow {
+      background: $c-lime;
+      rotate: 45deg;
+    }
+
+    .work-card__num {
+      translate: 0 u(-12);
+      color: $c-lime;
+    }
+
+    .work-card__title {
+      background-size: 100% 2px;
+    }
+  }
+}

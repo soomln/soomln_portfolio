@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="2000" viewBox="0 0 1720 2000" fill="none">
+  <!-- DAYLONG 06 수분 지속력 그래프 선 (예시 데이터)
+       피그마 06_수분지속력 프레임 안에 넣고 X 0, Y 0 에 놓으면 축·라벨 위치와 맞습니다.
+       x: 0h=240 ... 12h=1520 (2시간 간격) / y: 1140 - 수분값×5.6
+       DAYLONG 40→85→82→79→76→73→70, 미사용 40→55→45→38→33→30→28 -->
+  <defs>
+    <linearGradient id="area" x1="0" y1="664" x2="0" y2="1140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4FC3E8" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#4FC3E8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path id="daylong-area" d="M240 916 L453 664 L667 681 L880 698 L1093 714 L1307 731 L1520 748 L1520 1140 L240 1140 Z" fill="url(#area)"/>
+  <path id="nonuse-line" d="M240 916 L453 832 L667 888 L880 927 L1093 955 L1307 972 L1520 983" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="daylong-line" d="M240 916 L453 664 L667 681 L880 698 L1093 714 L1307 731 L1520 748" stroke="#4FC3E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle id="end-dot" cx="1520" cy="748" r="12" fill="#4FC3E8" stroke="#FFFFFF" stroke-width="6"/>
+</svg>

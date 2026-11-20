@@ -1,0 +1,18 @@
+// Design tokens (Figma: Black / Gray / Light gray / Light green)
+$c-black: #3b3838;
+$c-gray: #57575c;
+$c-gray-light: #757577;
+$c-lime: #97fd31;
+$c-dark: #222223;
+$c-white: #ffffff;
+$c-card: rgba(217, 217, 217, 0.8);
+
+$f-sans: "Pretendard", "Pretendard Variable", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+$f-display: "Anton", "Impact", sans-serif;
+
+// Figma frame size — every value in the design is authored against this
+$design-w: 1440;
+$section-h: 1024;
+
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);

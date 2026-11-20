@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROLL 36 Frame Half-neck Knit — Project 03 · Soomln</title>
+    <meta
+      name="description"
+      content="가상 니트 브랜드 ROLL 36의 남녀 공용 하프넥 니트 상세페이지를 기획부터 디자인까지 진행한 작업 과정입니다."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500&family=Cormorant+Garamond:wght@300&family=DM+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <!--
+  PROJECT 03 — ROLL 36 상세페이지 케이스 스터디.
+  상세페이지 이미지: assets/img/roll36/01_COVER ~ 06_END.jpg (Figma에서 섹션별 1x JPG로 내보낸 것, 다시 내보내면 그대로 덮어씀)
+  ※ 본문 문장은 초안입니다. 본인 말투로 다듬어 주세요.
+-->
+  <body class="case">
+    <canvas class="marble" id="marble" aria-hidden="true"></canvas>
+
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor__dot"></span>
+      <span class="cursor__ring"><span class="cursor__label">VIEW</span></span>
+    </div>
+    <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+    <header class="case-header">
+      <a class="case-header__back" href="index.html#works" data-cursor="hover">← WORKS</a>
+      <a class="case-header__logo" href="index.html">Soomln</a>
+      <span class="case-header__index">PROJECT 03</span>
+    </header>
+
+    <main class="page case-page">
+      <!-- COVER ================================================ -->
+      <section class="case-hero">
+        <p class="case-hero__label" data-reveal>PROJECT 03 — DETAIL PAGE</p>
+        <h1 class="case-hero__title" data-split>ROLL 36<br />HALF-NECK KNIT.</h1>
+        <p class="case-hero__lead" data-reveal="0.1">
+          서른여섯 장의 겨울 중, 가장 오래 남을 한 장.<br />
+          필름 한 롤에 담은 겨울밤처럼, 남녀 누구나 입는 하프넥 니트를 보여 주는 패션 상세페이지입니다.
+        </p>
+
+        <dl class="case-meta" data-reveal="0.2">
+          <div>
+            <dt>ROLE</dt>
+            <dd>기획 · 카피 · 상세페이지 디자인</dd>
+          </div>
+          <div>
+            <dt>YEAR</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>TOOLS</dt>
+            <dd>Figma · Photoshop · AI 이미지 생성</dd>
+          </div>
+          <div>
+            <dt>TYPE</dt>
+            <dd>개인 프로젝트 (가상 브랜드)</dd>
+          </div>
+        </dl>
+
+        <figure class="case-cover" data-reveal="0.3">
+          <img
+            src="assets/img/roll36/06_END.jpg"
+            alt="필름 프레임 속 버건디 니트를 입은 사람과 36/36, 이번 겨울도 따뜻한 한 장으로라는 마무리 화면"
+          />
+        </figure>
+      </section>
+
+      <!-- 01 OVERVIEW ========================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">01 / OVERVIEW</p>
+          <h2 class="case-section__title" data-split>OVERVIEW.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-lead" data-reveal>옷을 설명하기 전에, 분위기를 먼저 입혔습니다.</p>
+          <p class="case-text" data-reveal="0.1">
+            감도 높은 패션 브랜드의 상세페이지는 정보보다 무드로 먼저 기억됩니다. ROLL 36은 '필름 한 롤'을 콘셉트로,
+            모든 사진을 같은 필름 프레임에 담고 컷마다 번호를 이어 붙였습니다. 표지의 ROLL 36에서 시작해 마지막 36/36으로
+            끝나도록 해, 스크롤 전체가 한 롤의 필름처럼 읽히게 했습니다. 이전 프로젝트의 긴 스크롤이 지루하게 느껴져, 이번에는
+            6개 섹션으로 압축했습니다.
+          </p>
+          <ul class="case-points" data-reveal="0.2">
+            <li>타깃 — 따뜻한 무드의 기본 니트를 찾는 20~30대 남녀</li>
+            <li>콘셉트 — 필름 한 롤에 담은 겨울밤, 누구나 오래 입는 한 장</li>
+            <li>규격 — 860px 상세페이지, 6개 섹션 (Figma 2배 1720px 작업)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 02 STORY ============================================= -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">02 / STORY</p>
+          <h2 class="case-section__title" data-split>STORY.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-text" data-reveal style="margin-top: 0">
+            어두운 밤의 무드로 시작해, 밝은 정보로 확인시키고, 다시 밤으로 닫히는 흐름을 설계했습니다.
+          </p>
+          <ol class="case-steps" data-stagger="0.06" style="margin-top: calc(40 * var(--u))">
+            <li data-reveal>
+              <span class="case-steps__num">01</span>
+              <h3>첫인상</h3>
+              <p>네 장의 거울 셀카를 필름 콜라주로 겹치고, 그 위에 큰 세리프 제목을 올려 잡지 표지처럼 시작합니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">02</span>
+              <h3>상상</h3>
+              <p>세 가지 색을 한 줄의 필름으로 보여 주고, 남녀 착용 컷마다 키와 사이즈를 적어 입은 모습을 떠올리게 합니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">03</span>
+              <h3>확인</h3>
+              <p>배경을 크림색으로 바꿔 넥, 짜임, 소매 디테일과 소재, 실측 사이즈, 세탁 정보를 차분히 정리했습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">04</span>
+              <h3>여운</h3>
+              <p>마지막 프레임 한 장과 36/36으로, 필름 한 롤을 다 찍은 듯한 끝맺음을 남깁니다.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 03 DESIGN SYSTEM ===================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">03 / DESIGN SYSTEM</p>
+          <h2 class="case-section__title" data-split>DESIGN.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-caption" data-reveal>COLOR</p>
+          <ul class="case-palette" data-reveal="0.05">
+            <li>
+              <span class="case-palette__chip" style="background: #1e1a17"></span><b>WARM CHARCOAL</b
+              ><span>#1E1A17 · 무드 섹션 배경</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #0e0c0b"></span><b>FILM BLACK</b
+              ><span>#0E0C0B · 필름 프레임</span>
+            </li>
+            <li>
+              <span class="case-palette__chip case-palette__chip--line" style="background: #f3ede3"></span><b>CREAM</b
+              ><span>#F3EDE3 · 정보 섹션 배경</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #2b2622"></span><b>INK</b
+              ><span>#2B2622 · 밝은 배경 글자</span>
+            </li>
+            <li>
+              <span class="case-palette__chip case-palette__chip--line" style="background: #ede6da"></span><b>PAPER</b
+              ><span>#EDE6DA · 어두운 배경 글자</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #8c8279"></span><b>DUST</b
+              ><span>#8C8279 · 라벨, 캡션</span>
+            </li>
+          </ul>
+
+          <p class="case-caption" data-reveal>TYPOGRAPHY</p>
+          <div class="case-type" data-reveal="0.05" style="grid-template-columns: repeat(3, 1fr)">
+            <div class="case-type__card">
+              <span
+                class="case-type__sample"
+                style="font-family: 'Cormorant Garamond', serif; font-weight: 300"
+                >Aa</span
+              >
+              <p class="case-type__name">Cormorant Garamond</p>
+              <p class="case-type__use">DISPLAY — 영문 제목, 시</p>
+            </div>
+            <div class="case-type__card">
+              <span class="case-type__sample" style="font-family: 'DM Mono', monospace; font-weight: 400; letter-spacing: 0"
+                >36A</span
+              >
+              <p class="case-type__name">DM Mono</p>
+              <p class="case-type__use">CODE — 필름 번호, 캡션</p>
+            </div>
+            <div class="case-type__card">
+              <span class="case-type__sample">가 Aa</span>
+              <p class="case-type__name">Pretendard</p>
+              <p class="case-type__use">TEXT — 한글 제목, 본문</p>
+            </div>
+          </div>
+
+          <p class="case-text" data-reveal>
+            따뜻한 차콜과 크림 두 가지 배경만으로 '밤의 무드'와 '낮의 정보'를 나눴습니다. 제품 색인 오트밀, 차콜,
+            버건디가 배경과 겹치지 않도록 브랜드 색은 모두 채도를 낮췄고, 모든 사진에 같은 보정 프리셋을 적용해 한 롤로
+            찍은 듯한 톤을 맞췄습니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 04 DETAIL PAGE (long image viewer) ==================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">04 / DETAIL PAGE</p>
+          <h2 class="case-section__title" data-split>DETAIL.</h2>
+          <ol class="case-index" data-reveal="0.1">
+            <li><a href="#r36-01" data-cursor="hover">01 커버</a></li>
+            <li><a href="#r36-02" data-cursor="hover">02 컬러</a></li>
+            <li><a href="#r36-03" data-cursor="hover">03 스타일링</a></li>
+            <li><a href="#r36-04" data-cursor="hover">04 디테일</a></li>
+            <li><a href="#r36-05" data-cursor="hover">05 상품 정보</a></li>
+            <li><a href="#r36-06" data-cursor="hover">06 마무리</a></li>
+          </ol>
+        </header>
+        <div class="case-section__body">
+          <p class="case-text" data-reveal style="margin-top: 0">
+            실제 쇼핑몰과 같은 860px 폭으로 전체 상세페이지를 그대로 보여 드립니다.
+          </p>
+          <!-- no data-reveal here: the viewer is taller than 15% of any screen can show, so it would never fade in -->
+          <div class="case-viewer">
+            <img
+              id="r36-01"
+              src="assets/img/roll36/01_COVER.jpg"
+              alt="01 커버 — 네 장의 필름 프레임 콜라주와 Frame Half-neck Knit 제목"
+              width="1720"
+              height="2400"
+            />
+            <img
+              id="r36-02"
+              src="assets/img/roll36/02_COLOR.jpg"
+              alt="02 컬러 — 옷걸이에 걸린 오트밀, 차콜, 버건디 니트와 컬러칩"
+              width="1720"
+              height="1600"
+              loading="lazy"
+            />
+            <img
+              id="r36-03"
+              src="assets/img/roll36/03_STYLING.jpg"
+              alt="03 스타일링 — 남녀 착용 컷 네 장과 키, 사이즈 캡션"
+              width="1720"
+              height="3000"
+              loading="lazy"
+            />
+            <img
+              id="r36-04"
+              src="assets/img/roll36/04_DETAIL.jpg"
+              alt="04 디테일 — 오트밀 니트 제품 컷과 하프넥, 골지 짜임, 소매 시보리 클로즈업"
+              width="1720"
+              height="2200"
+              loading="lazy"
+            />
+            <img
+              id="r36-05"
+              src="assets/img/roll36/05_INFO.jpg"
+              alt="05 상품 정보 — 소재 체크 표, 실측 사이즈 표, 모델 정보, 세탁 아이콘 (예시 데이터)"
+              width="1720"
+              height="2360"
+              loading="lazy"
+            />
+            <img
+              id="r36-06"
+              src="assets/img/roll36/06_END.jpg"
+              alt="06 마무리 — 마지막 필름 프레임과 36/36, ‘이번 겨울도, 따뜻한 한 장으로.’"
+              width="1720"
+              height="1365"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 PROCESS =========================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">05 / PROCESS</p>
+          <h2 class="case-section__title" data-split>PROCESS.</h2>
+        </header>
+        <div class="case-section__body">
+          <ol class="case-steps" data-stagger="0.06">
+            <li data-reveal>
+              <span class="case-steps__num">01</span>
+              <h3>기획</h3>
+              <p>패션 브랜드의 무드를 참고해 콘셉트와 6개 섹션을 정하고, 카피와 와이어프레임을 먼저 정리했습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">02</span>
+              <h3>이미지</h3>
+              <p>첫 컷을 기준 이미지로 첨부해 같은 니트, 같은 방, 같은 조명으로 착용·제품·디테일 컷 11장을 만들었습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">03</span>
+              <h3>보정</h3>
+              <p>Camera Raw 프리셋 하나로 11장의 톤과 필름 그레인을 맞추고, 워터마크 제거와 제품 누끼를 진행했습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">04</span>
+              <h3>디자인</h3>
+              <p>필름 프레임, 컬러칩, 카드, 표 줄을 컴포넌트로 만들고 자동 레이아웃으로 섹션을 쌓아 수정이 쉽게 했습니다.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 06 POINTS ============================================ -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">06 / DESIGN POINTS</p>
+          <h2 class="case-section__title" data-split>POINTS.</h2>
+        </header>
+        <div class="case-section__body">
+          <ul class="case-issues" data-stagger="0.06" style="margin-top: 0">
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 01</span>
+              <h3 class="case-issue__title">이어지는 필름 번호</h3>
+              <p class="case-issue__problem">사진이 많아질수록 페이지가 흩어진 이미지 모음처럼 보일 수 있습니다.</p>
+              <p class="case-issue__solution">01A부터 36A까지 프레임 번호를 섹션을 넘어 이어 붙여, 한 롤의 필름으로 묶었습니다.</p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 02</span>
+              <h3 class="case-issue__title">사진과 표가 같은 숫자</h3>
+              <p class="case-issue__problem">착용 컷만으로는 내 몸에 어떻게 맞을지 알기 어렵습니다.</p>
+              <p class="case-issue__solution">
+                스타일링 캡션의 키·사이즈를 상품 정보의 모델 정보, 실측 표와 같은 숫자로 맞춰 신뢰를 이었습니다.
+              </p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 03</span>
+              <h3 class="case-issue__title">한눈에 읽히는 소재 표</h3>
+              <p class="case-issue__problem">두께감, 신축성 같은 정보는 표 전체를 읽어야 알 수 있습니다.</p>
+              <p class="case-issue__solution">선택된 값만 진하게 표시해, 훑어보기만 해도 '도톰하고 부드럽다'가 전달되게 했습니다.</p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 04</span>
+              <h3 class="case-issue__title">처음부터 컴포넌트로</h3>
+              <p class="case-issue__problem">이전 작업에서는 자동 레이아웃을 마지막에 적용해 수정이 번거로웠습니다.</p>
+              <p class="case-issue__solution">
+                필름 프레임 하나를 원본으로 모든 사진에 재사용해, 원본만 고치면 페이지 전체가 함께 바뀌게 했습니다.
+              </p>
+            </li>
+          </ul>
+          <p class="case-text case-text--small" data-reveal>
+            이미지: Google Gemini로 생성 후 Photoshop 보정·누끼 / 아이콘: Tabler Icons (MIT) / 폰트: Cormorant Garamond,
+            DM Mono, Pretendard (SIL OFL). 사이즈·소재 값은 예시 데이터이며, ROLL 36은 포트폴리오를 위한 가상 브랜드입니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- CLOSING (dark) ======================================= -->
+      <section class="case-end" data-marble-dark>
+        <h2 class="case-end__title" data-split>WHAT I<br />LEARNED<em>.</em></h2>
+        <p class="case-end__text" data-reveal>
+          (작성 예정 — 이번 작업에서 배운 점을 직접 적어 주세요.)
+        </p>
+
+        <div class="case-next" data-reveal="0.1">
+          <p class="case-next__label">NEXT PROJECT</p>
+          <p class="case-next__title">COMING SOON.</p>
+          <a class="pill" href="index.html#works" data-cursor="hover">← BACK TO WORKS</a>
+        </div>
+
+        <span class="rule rule--light case-end__rule"></span>
+        <p class="case-end__copy">© 2026 Soomln. All rights reserved.</p>
+        <a class="case-end__top" href="#" data-cursor="hover">BACK TO TOP ↑</a>
+      </section>
+    </main>
+
+    <script src="js/marble.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="73.2655" height="72.2654" viewBox="0 0 73.2655 72.2654" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 11">
+<mask id="stroke0_0_27" fill="white">
+<path d="M65.1455 29.4292L57.9357 22.2193L66.0556 14.0993L59.6578 7.70153L51.5379 15.8215L43.8363 8.11999L28.6542 44.6106L65.1455 29.4292Z"/>
+</mask>
+<path id="Union" d="M65.1455 29.4292L57.9357 22.2193L66.0556 14.0993L59.6578 7.70153L51.5379 15.8215L43.8363 8.11999L28.6542 44.6106L65.1455 29.4292Z" stroke-width="5" stroke="#3B3838" mask="url(#stroke0_0_27)"/>
+<line id="Line 9" y1="32.5154" x2="15" y2="32.5154" stroke-width="2.5" stroke="#3B3838"/>
+<line id="Line 10" x1="0.323524" y1="48.4728" x2="14.8124" y2="44.5905" stroke-width="2.5" stroke="#3B3838"/>
+<line id="Line 11" x1="31.25" y1="72.2654" x2="31.25" y2="57.2654" stroke-width="2.5" stroke="#3B3838"/>
+<line id="Line 13" x1="10.8839" y1="65.1493" x2="21.4905" y2="54.5427" stroke-width="2.5" stroke="#3B3838"/>
+<line id="Line 12" x1="47.1483" y1="69.685" x2="43.266" y2="55.1961" stroke-width="2.5" stroke="#3B3838"/>
+</g>
+</svg>

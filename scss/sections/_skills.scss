@@ -1,0 +1,154 @@
+@use "../abstracts" as *;
+
+.skills {
+  &__roles {
+    position: absolute;
+    top: u(140);
+    right: u(18);
+    text-align: right;
+    @include type(500, 20, 28, -0.6);
+  }
+
+  &__caption {
+    position: absolute;
+    top: u(306);
+    @include type(700, 16, 22, 1.28);
+
+    &--tools { left: u(18); }
+    &--process { left: u(740); }
+  }
+}
+
+.skill-list {
+  @include pos(18, 340, 640);
+}
+
+.skill-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: u(24);
+  padding: u(20) 0;
+  border-bottom: 1px solid rgba($c-black, 0.35);
+  isolation: isolate;
+
+  // Lime wash that sweeps in on hover
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $c-lime;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.55s $ease-out;
+  }
+
+  &__index {
+    @include type(500, 15, 22, 0.6);
+    color: $c-gray-light;
+    transition: translate 0.55s $ease-out, color 0.3s;
+  }
+
+  &__name {
+    @include type(700, 40, 48, -0.8);
+    transition: translate 0.55s $ease-out;
+  }
+
+  &__cat {
+    margin-left: auto;
+    @include type(500, 15, 22, 0.6);
+    color: $c-gray-light;
+    transition: translate 0.55s $ease-out, color 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    .skill-row__index,
+    .skill-row__name {
+      translate: u(16) 0;
+    }
+
+    .skill-row__index,
+    .skill-row__cat {
+      color: $c-black;
+    }
+
+    .skill-row__cat {
+      translate: u(-16) 0;
+    }
+  }
+}
+
+.process-grid {
+  @include pos(740, 340, 682);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: u(24);
+}
+
+.process-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: u(250);
+  padding: u(28);
+  border: 1px solid rgba($c-black, 0.15);
+  border-radius: u(20);
+  background: rgba($c-white, 0.6);
+  transition:
+    background-color 0.45s $ease-out,
+    border-color 0.45s $ease-out,
+    translate 0.45s $ease-out;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__step {
+    font-family: $f-display;
+    @include type(400, 56, 60);
+    color: $c-black;
+    transition: color 0.45s;
+  }
+
+  &__dot {
+    @include circle(14);
+    background: $c-lime;
+    transition: scale 0.45s $ease-out;
+  }
+
+  &__title {
+    margin-bottom: u(8);
+    @include type(700, 28, 32, 0.56);
+    color: $c-black;
+    transition: color 0.45s;
+  }
+
+  &__desc {
+    @include type(400, 16, 24, -0.48);
+    color: $c-gray-light;
+    word-break: keep-all;
+    transition: color 0.45s;
+  }
+
+  &:hover {
+    background: $c-dark;
+    border-color: $c-dark;
+    translate: 0 u(-8);
+
+    .process-card__step { color: $c-lime; }
+    .process-card__title { color: $c-white; }
+    .process-card__desc { color: rgba($c-white, 0.7); }
+
+    .process-card__dot {
+      scale: 1.6;
+    }
+  }
+}

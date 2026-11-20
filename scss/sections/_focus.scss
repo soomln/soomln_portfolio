@@ -1,0 +1,135 @@
+@use "sass:list";
+@use "../abstracts" as *;
+
+.focus {
+  &__headline {
+    @include center-y(16, 117.5);
+    @include trim;
+    font-family: $f-display;
+    @include type(400, 250, 80, 10);
+    color: $c-black;
+  }
+
+  &__visual {
+    @include pos(400, 65, 639, 959);
+  }
+
+  // relative to .focus__visual (400, 65) → on screen (519, 895) / (579, 915)
+  &__shadow {
+    &--1 { @include pos(119, 830, 414, 70); }
+    &--2 { @include pos(179, 850, 294, 64); }
+  }
+
+  &__statue {
+    position: relative; // stays above the shadows
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: focus-float 6s $ease-in-out infinite;
+  }
+
+  &__motto {
+    @include center-y(16, 280.5);
+    @include trim;
+    @include type(700, 36, 28, 1.44);
+  }
+
+  &__rule-left {
+    @include pos(16, 331.5, 344, 2.5);
+  }
+
+  &__plus-left {
+    @include pos(16, 361, 21, 21);
+  }
+
+  &__copy {
+    @include pos(16, 412, 355);
+    display: flex;
+    flex-direction: column;
+    gap: u(23);
+  }
+
+  &__copy-title {
+    @include trim;
+    @include type(700, 32, 28, 1.28);
+  }
+
+  &__copy-body {
+    @include trim;
+    @include type(600, 24, 25, 0.24);
+  }
+
+  // Three label/value pairs, Figma centers listed per row
+  &__list {
+    dt,
+    dd {
+      @include trim;
+    }
+
+    dt {
+      @include type(600, 24, 25, 0.24);
+    }
+
+    dd {
+      @include type(400, 20, 25, 0.2);
+    }
+  }
+
+  $rows: (679.5 713) (764.5 798) (849.5 883);
+
+  @for $i from 1 through 3 {
+    $row: list.nth($rows, $i);
+
+    &__item:nth-child(#{$i}) {
+      dt { @include center-y(16, list.nth($row, 1)); }
+      dd { @include center-y(16, list.nth($row, 2)); }
+    }
+  }
+
+  &__barcode {
+    @include pos(16, 928, 257, 87);
+  }
+
+  &__vol {
+    @include center-y(1144, 323.5);
+    @include trim;
+    @include type(700, 64, 28, 2.56);
+  }
+
+  &__edition {
+    @include pos(1144, 366, 199);
+    @include trim;
+    @include type(500, 32, 30, 0.32);
+  }
+
+  &__dmc {
+    @include center-y(1144, 541.5);
+    @include trim;
+    @include type(700, 64, 55, 2.56);
+  }
+
+  &__rule-right {
+    @include pos(1129, 641.5, 295, 2.5);
+  }
+
+  &__plus-right {
+    @include pos(1366, 662, 21, 21);
+  }
+
+  &__swatches {
+    @include pos(1364, 693);
+  }
+
+  &__globe {
+    @include pos(1338, 858, 77.016, 42.359);
+  }
+
+  &__crosshair {
+    @include pos(1330, 923, 94, 94);
+  }
+}
+
+@keyframes focus-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 u(-14); }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "soomln-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Soomln web designer portfolio — HTML / Sass / vanilla JS + WebGL marble",
+  "scripts": {
+    "build": "sass scss/main.scss css/main.css --no-source-map",
+    "watch": "sass --watch scss/main.scss css/main.css --no-source-map",
+    "start": "http-server . -c-1 -p 5173 -o",
+    "dev": "concurrently -k -n sass,server -c magenta,green \"npm:watch\" \"npm:start\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5",
+    "http-server": "^14.1.1",
+    "sass": "^1.80.0"
+  }
+}

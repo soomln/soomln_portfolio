@@ -1,0 +1,206 @@
+@use "../abstracts" as *;
+
+// Note: this Figma frame is vertically flipped internally, so the y values
+// below are the on-screen positions (1024 - y - h), not the raw layer values.
+.about {
+  color: $c-gray;
+
+  // relative to .about__visual (724, 102) → on screen (724, 670)
+  &__shape {
+    @include pos(0, 568, 571, 235);
+  }
+
+  &__visual {
+    @include pos(724, 102, 571, 803);
+  }
+
+  &__statue {
+    width: 100%;
+    height: 100%;
+  }
+
+  // Figma's "Ellipse 12", completed (the Figma arc was open at the top),
+  // positioned relative to .about__visual so it follows the parallax.
+  &__ring {
+    @include pos(-96.14, 182.25, 781.72, 214.72);
+    rotate: -32.53deg;
+    animation: about-orbit 7s $ease-in-out infinite;
+  }
+
+  &__logo {
+    @include center-y(18, 26.5);
+    @include trim;
+    @include type(700, 36, 28, 1.44);
+    color: $c-black;
+  }
+
+  &__label {
+    @include center-y(18, 101.5);
+    @include trim;
+    @include type(500, 24, 28, -1.2);
+  }
+
+  &__title {
+    @include center-y(18, 256);
+    @include trim;
+    width: u(683);
+    font-family: $f-display;
+    @include type(400, 138, 125, 1.38);
+    color: $c-black;
+  }
+
+  &__lead {
+    @include center-y(18, 417);
+    @include trim;
+    @include type(600, 28, 28, -1.4);
+  }
+
+  &__rule {
+    @include pos(18, 449, 477, 2);
+  }
+
+  &__hello {
+    @include center-y(18, 518.5);
+    @include trim;
+    @include type(700, 36, 38, 0.36);
+  }
+
+  &__desc {
+    @include center-y(18, 619.5);
+    @include trim;
+    @include type(500, 24, 29, -1.2);
+  }
+
+  &__roles {
+    @include center-y(1297, 404);
+    @include trim;
+    @include type(500, 20, 28, -1);
+  }
+
+  &__rule-right {
+    @include pos(1295, 455, 138, 2);
+  }
+
+  &__year {
+    @include center-y(1300, 519.5);
+    @include trim;
+    @include type(700, 36, 38, 0.36);
+  }
+
+  &__plus {
+    @include pos(1360, 581, 21, 21);
+  }
+
+  &__swatches {
+    @include pos(1358, 612);
+  }
+
+  &__globe {
+    @include pos(1333, 748, 77.016, 42.358);
+    transform: scaleY(-1);
+  }
+
+  &__crosshair {
+    @include pos(1323, 811, 94, 94);
+  }
+
+  &__star {
+    @include pos(1350, 33, 60, 60);
+  }
+
+  &__rule-bottom {
+    @include pos(27, 970, 1386, 2);
+  }
+
+  &__footer {
+    @include center-y(18, 997);
+    @include trim;
+    @include type(400, 20, 40, 0.6);
+    color: $c-black;
+  }
+}
+
+// Interest / style cards
+.about-card {
+  @include pos(18, 764, 330, 120);
+  border-radius: u(10);
+  background: $c-card;
+  transition:
+    background-color 0.45s $ease-out,
+    color 0.45s $ease-out,
+    translate 0.45s $ease-out;
+
+  &--style {
+    left: u(374);
+  }
+
+  &__label {
+    @include center-y(12, 26.5);
+    @include trim;
+    @include type(500, 18, 29, 0.36);
+    white-space: pre;
+  }
+
+  &__title {
+    @include center-y(12, 58);
+    @include trim;
+    @include type(700, 28, 29, 0.56);
+  }
+
+  &__desc {
+    @include center-y(12, 91.5);
+    @include trim;
+    @include type(500, 16, 29, -0.96);
+  }
+
+  &__icon--cursor {
+    @include pos(235, 27, 73.2655, 72.2654);
+    transform: scaleY(-1);
+    transition: translate 0.45s $ease-out, filter 0.45s;
+  }
+
+  &:hover {
+    background: $c-dark;
+    color: $c-white;
+    translate: 0 u(-6);
+
+    .about-card__icon--cursor {
+      translate: u(-4) u(-4);
+    }
+
+    .about-card__icon--cursor,
+    .venn img {
+      filter: invert(1);
+    }
+
+    .venn__circle--a {
+      translate: u(-6) u(6);
+    }
+  }
+}
+
+.venn {
+  img {
+    position: absolute;
+    transition: translate 0.45s $ease-out, filter 0.45s;
+  }
+
+  &__circle--a { @include pos(260, 48, 45, 45); }
+  &__circle--b { @include pos(245, 33, 45, 45); }
+
+  &__arrow {
+    // 21 × 14 triangle centered in its 24.75px rotated box
+    @include pos(244.875, 81.375, 21, 14);
+    rotate: -135deg;
+  }
+
+  &__check {
+    @include pos(271.35, 27.35, 14, 14);
+    rotate: -15deg;
+  }
+}
+
+@keyframes about-orbit {
+  0%, 100% { rotate: -32.53deg; scale: 1; }
+  50% { rotate: -29deg; scale: 1.03; }
+}

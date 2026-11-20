@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soomln — Web Designer Portfolio 2026</title>
+    <meta
+      name="description"
+      content="사용자 경험을 고민하고, 시각적 언어로 표현하는 웹 디자이너 최수민의 포트폴리오입니다."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- 물결(대리석) 배경: WebGL 캔버스. 커서가 지나가면 무늬가 쓸려 나갑니다. -->
+    <canvas class="marble" id="marble" aria-hidden="true"></canvas>
+
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor__dot"></span>
+      <span class="cursor__ring"><span class="cursor__label">VIEW</span></span>
+    </div>
+    <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+    <main class="page">
+      <!-- 01 HERO ============================================== -->
+      <section class="section hero" id="hero" data-section="01">
+        <a class="hero__logo" href="#hero">Soomln</a>
+        <p class="hero__meta">PORTFOLIO / 2026</p>
+
+        <div class="hero__intro">
+          <p class="hero__role" data-reveal><span class="hero__role-dot"></span>WEB DESIGNER</p>
+          <h1 class="hero__title" data-reveal="0.1">DESIGN<br />MEETS<br />CODE.</h1>
+          <a class="arrow-btn hero__arrow" href="#works" data-magnetic data-cursor="hover" aria-label="작업 보러 가기"
+            >↗</a
+          >
+          <p class="hero__lead" data-reveal="0.2">사용자 경험을 고민하고, 시각적 언어로 표현합니다.</p>
+        </div>
+
+        <div class="hero__expertise" data-reveal="0.3">
+          <p>MY EXPERTISE</p>
+          <p>UI DESIGN / WEB DESIGNER</p>
+        </div>
+
+        <div class="hero__visual">
+          <img
+            class="hero__statue"
+            data-parallax="18"
+            src="assets/img/statue-fractured.png"
+            alt="사선으로 조각난 대리석 흉상"
+          />
+        </div>
+
+        <a class="hero__scroll" href="#focus" data-cursor="hover">SCROLL ↓</a>
+      </section>
+
+      <!-- 02 FOCUS ============================================== -->
+      <section class="section focus" id="focus" data-section="02">
+        <h2 class="focus__headline" data-split>STAY FOCUSED</h2>
+
+        <!-- 그림자도 조각상과 함께 패럴랙스로 움직이도록 같은 묶음 안에 둡니다 -->
+        <div class="focus__visual" data-parallax="12">
+          <img class="focus__shadow focus__shadow--1" src="assets/svg/shadow-1.svg" alt="" />
+          <img class="focus__shadow focus__shadow--2" src="assets/svg/shadow-2.svg" alt="" />
+          <img class="focus__statue" src="assets/img/statue-stacked.png" alt="층층이 잘린 대리석 흉상과 라임색 띠" />
+        </div>
+
+        <p class="focus__motto" data-reveal>Mind over<br />everythingㆍ2026</p>
+        <span class="rule focus__rule-left"></span>
+        <img class="icon focus__plus-left" src="assets/svg/plus.svg" alt="" />
+
+        <div class="focus__copy" data-reveal="0.1">
+          <p class="focus__copy-title">FOCUS ISN’T TALENT.<br />IT’S A DECISION.</p>
+          <p class="focus__copy-body">
+            In a world full of noise,<br />clarity is your<br />greatest advantage.<br />Stay locked in.<br />Everything
+            else<br />is secondary.
+          </p>
+        </div>
+
+        <dl class="focus__list" data-reveal="0.2">
+          <div class="focus__item">
+            <dt>PORTFOLIO</dt>
+            <dd>WEB DESIGNER · 2026</dd>
+          </div>
+          <div class="focus__item">
+            <dt>DESIGN &amp; CODE</dt>
+            <dd>UI / WEB DESIGN</dd>
+          </div>
+          <div class="focus__item">
+            <dt>STAY FOCUSED</dt>
+            <dd>FOCUS ON THE DETAILS.</dd>
+          </div>
+        </dl>
+
+        <img class="focus__barcode" src="assets/svg/barcode.svg" alt="" />
+
+        <p class="focus__vol" data-reveal>VOL. 01</p>
+        <p class="focus__edition" data-reveal="0.1">WEB DESIGN<br />2026</p>
+        <p class="focus__dmc" data-reveal="0.2">DESIGN<br />MEETS<br />CODE</p>
+        <span class="rule focus__rule-right"></span>
+
+        <img class="icon focus__plus-right" src="assets/svg/plus.svg" alt="" />
+        <ul class="swatches focus__swatches" aria-hidden="true">
+          <li class="swatch swatch--lime"></li>
+          <li class="swatch swatch--g1"></li>
+          <li class="swatch swatch--g2"></li>
+          <li class="swatch swatch--g3"></li>
+        </ul>
+        <img class="icon icon--spin-y focus__globe" src="assets/svg/globe.svg" alt="" />
+        <img class="icon icon--spin focus__crosshair" src="assets/svg/crosshair.svg" alt="" />
+      </section>
+
+      <!-- 03 ABOUT ============================================== -->
+      <section class="section about" id="about" data-section="03">
+        <!-- 링의 뒤쪽 절반은 조각상 뒤, 앞쪽 절반은 조각상 앞에 그려 머리를 감싸 도는 것처럼 보입니다.
+           어두운 사선 도형도 같은 묶음 안에 있어 패럴랙스 때 조각상과 어긋나지 않습니다. -->
+        <div class="about__visual" data-parallax="10">
+          <img class="about__shape" src="assets/svg/about-shape.svg" alt="" />
+          <span class="ring about__ring" aria-hidden="true"></span>
+          <img class="about__statue" src="assets/img/statue-cutout.png" alt="고전 대리석 조각상 흉상" />
+          <span class="ring ring--front about__ring" aria-hidden="true"></span>
+        </div>
+
+        <p class="about__logo">Soomln.</p>
+        <p class="label about__label">03 / ABOUT ME</p>
+        <h2 class="about__title" data-split>BEHIND<br />THE DESIGN.</h2>
+        <p class="about__lead" data-reveal>디자인에 대한 생각과, 나를 소개합니다.</p>
+        <span class="rule about__rule"></span>
+        <p class="about__hello" data-reveal="0.1">HELLO,<br />I’M SOOMIN.</p>
+        <p class="about__desc" data-reveal="0.2">
+          사용자의 관점에서 생각하고,<br />작은 디테일까지 고민하며<br />더 나은 경험을 디자인하는 웹 디자이너
+          최수민입니다.
+        </p>
+
+        <article class="about-card about-card--interest" data-reveal="0.1" data-cursor="hover">
+          <p class="about-card__label">01 / INTEREST</p>
+          <h3 class="about-card__title">UI / UX DESIGN</h3>
+          <p class="about-card__desc">사용자 중심의 경험을 설계합니다.</p>
+          <img class="about-card__icon about-card__icon--cursor" src="assets/svg/icon-cursor.svg" alt="" />
+        </article>
+        <article class="about-card about-card--style" data-reveal="0.2" data-cursor="hover">
+          <p class="about-card__label">02 / &nbsp;STYLE</p>
+          <h3 class="about-card__title">VISUAL DESIGN</h3>
+          <p class="about-card__desc">감각적인 시각 언어로 표현합니다.</p>
+          <span class="venn" aria-hidden="true">
+            <img class="venn__circle venn__circle--a" src="assets/svg/venn-circle.svg" alt="" />
+            <img class="venn__circle venn__circle--b" src="assets/svg/venn-circle.svg" alt="" />
+            <img class="venn__arrow" src="assets/svg/venn-arrow.svg" alt="" />
+            <img class="venn__check" src="assets/svg/venn-check.svg" alt="" />
+          </span>
+        </article>
+
+        <p class="about__roles">WEB DESIGNER<br />UI / UX DESIGN<br />VISUAL DESIGN</p>
+        <span class="rule about__rule-right"></span>
+        <p class="about__year">2026 .</p>
+        <img class="icon about__plus" src="assets/svg/plus.svg" alt="" />
+        <ul class="swatches about__swatches" aria-hidden="true">
+          <li class="swatch swatch--lime"></li>
+          <li class="swatch swatch--g1"></li>
+          <li class="swatch swatch--g2"></li>
+          <li class="swatch swatch--g3"></li>
+        </ul>
+        <img class="icon icon--spin-y about__globe" src="assets/svg/globe-about.svg" alt="" />
+        <img class="icon icon--spin about__crosshair" src="assets/svg/crosshair.svg" alt="" />
+        <img class="icon icon--twinkle about__star" src="assets/svg/star.svg" alt="" />
+
+        <span class="rule about__rule-bottom"></span>
+        <p class="about__footer">DESIGN WITH PURPOSE.</p>
+      </section>
+
+      <!-- 04 WORKS ============================================== -->
+      <section class="section works" id="works" data-section="04">
+        <p class="label section-head__label">04 / SELECTED WORKS</p>
+        <h2 class="section-head__title" data-split>SELECTED WORKS.</h2>
+        <p class="works__count">( 03 )</p>
+        <p class="section-head__lead" data-reveal>직접 기획하고 디자인한 작업들을 소개합니다.</p>
+        <span class="rule section-head__rule"></span>
+
+        <ul class="works__grid" data-stagger="0.1">
+          <li class="work-card" data-reveal>
+            <a class="work-card__link" href="project-portfolio.html" data-cursor="view">
+              <div class="work-card__thumb">
+                <img
+                  class="work-card__img work-card__img--site"
+                  src="assets/img/work-portfolio.jpg"
+                  alt="Soomln 포트폴리오 웹사이트 연락처 화면"
+                />
+                <span class="work-card__tag">PORTFOLIO WEB</span>
+                <span class="work-card__arrow">↗</span>
+                <span class="work-card__num">01</span>
+              </div>
+              <div class="work-card__meta"><span>PROJECT 01</span><span>2026</span></div>
+              <h3 class="work-card__title">Soomln 포트폴리오 웹사이트</h3>
+              <p class="work-card__desc">
+                Figma로 디자인하고 코드로 구현한 포트폴리오. WebGL 연기 배경과 인터랙션을 담았습니다.
+              </p>
+              <p class="work-card__tools">FIGMA · SASS · WEBGL</p>
+            </a>
+          </li>
+          <li class="work-card" data-reveal>
+            <a class="work-card__link" href="project-daylong.html" data-cursor="view">
+              <div class="work-card__thumb">
+                <img
+                  class="work-card__img work-card__img--daylong"
+                  src="assets/img/work-daylong.jpg"
+                  alt="물 위에 선 DAYLONG 수분 세럼 병"
+                />
+                <span class="work-card__tag">DETAIL PAGE</span>
+                <span class="work-card__arrow">↗</span>
+                <span class="work-card__num">02</span>
+              </div>
+              <div class="work-card__meta"><span>PROJECT 02</span><span>2026</span></div>
+              <h3 class="work-card__title">DAYLONG 수분 세럼 상세페이지</h3>
+              <p class="work-card__desc">
+                속건조 직장인의 하루를 따라가는 화장품 상세페이지. 기획부터 이미지 합성, 디자인까지 진행했습니다.
+              </p>
+              <p class="work-card__tools">FIGMA · PHOTOSHOP · AI IMAGE</p>
+            </a>
+          </li>
+          <li class="work-card" data-reveal>
+            <a class="work-card__link" href="project-roll36.html" data-cursor="view">
+              <div class="work-card__thumb">
+                <img
+                  class="work-card__img work-card__img--roll36"
+                  src="assets/img/work-roll36.jpg"
+                  alt="필름 프레임 네 장 위에 Frame Half-neck Knit 제목이 놓인 ROLL 36 커버"
+                />
+                <span class="work-card__tag">DETAIL PAGE</span>
+                <span class="work-card__arrow">↗</span>
+                <span class="work-card__num">03</span>
+              </div>
+              <div class="work-card__meta"><span>PROJECT 03</span><span>2026</span></div>
+              <h3 class="work-card__title">ROLL 36 니트 상세페이지</h3>
+              <p class="work-card__desc">필름 한 롤에 담은 겨울밤 콘셉트의 남녀 공용 니트 상세페이지입니다.</p>
+              <p class="work-card__tools">FIGMA · PHOTOSHOP · AI IMAGE</p>
+            </a>
+          </li>
+          <!-- 새 작업이 생기면 위의 카드를 복사해 추가하고, 이 패널은 지우세요 -->
+          <li class="works__soon" data-reveal>
+            <div class="works__soon-top"><span>NEXT</span><span>04</span></div>
+            <p class="works__soon-title">COMING<br />SOON.</p>
+            <div class="works__soon-bottom">
+              <p>브랜드 프로모션 페이지를<br />준비하고 있습니다.</p>
+              <span>UPDATE · 2026</span>
+            </div>
+          </li>
+        </ul>
+
+        <span class="rule section-foot__rule"></span>
+        <p class="section-foot__left">DESIGN WITH PURPOSE.</p>
+        <a class="section-foot__right link-underline" href="#works" data-cursor="hover">VIEW ALL WORKS ↗</a>
+      </section>
+
+      <!-- 05 SKILLS ============================================= -->
+      <section class="section skills" id="skills" data-section="05">
+        <p class="label section-head__label">05 / SKILLS &amp; PROCESS</p>
+        <h2 class="section-head__title" data-split>HOW I WORK.</h2>
+        <p class="skills__roles">WEB DESIGNER<br />UI / UX DESIGN<br />VISUAL DESIGN</p>
+        <p class="section-head__lead" data-reveal>도구를 다루는 방식과, 작업을 완성해 가는 과정입니다.</p>
+        <span class="rule section-head__rule"></span>
+
+        <p class="skills__caption skills__caption--tools">TOOLS</p>
+        <ul class="skill-list" data-stagger="0.05">
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">01</span><span class="skill-row__name">Figma</span
+            ><span class="skill-row__cat">UI DESIGN · PROTOTYPE</span>
+          </li>
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">02</span><span class="skill-row__name">Photoshop</span
+            ><span class="skill-row__cat">GRAPHIC · RETOUCH</span>
+          </li>
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">03</span><span class="skill-row__name">Illustrator</span
+            ><span class="skill-row__cat">VECTOR · ICON</span>
+          </li>
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">04</span><span class="skill-row__name">HTML / CSS</span
+            ><span class="skill-row__cat">MARKUP · RESPONSIVE</span>
+          </li>
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">05</span><span class="skill-row__name">JavaScript</span
+            ><span class="skill-row__cat">INTERACTION</span>
+          </li>
+          <li class="skill-row" data-reveal>
+            <span class="skill-row__index">06</span><span class="skill-row__name">Notion</span
+            ><span class="skill-row__cat">DOCUMENT · PLANNING</span>
+          </li>
+        </ul>
+
+        <p class="skills__caption skills__caption--process">PROCESS</p>
+        <ol class="process-grid" data-stagger="0.08">
+          <li class="process-card" data-reveal>
+            <div class="process-card__top">
+              <span class="process-card__step">01</span><span class="process-card__dot"></span>
+            </div>
+            <div>
+              <h3 class="process-card__title">RESEARCH</h3>
+              <p class="process-card__desc">사용자와 목표를 먼저 이해하고, 문제를 정의합니다.</p>
+            </div>
+          </li>
+          <li class="process-card" data-reveal>
+            <div class="process-card__top">
+              <span class="process-card__step">02</span><span class="process-card__dot"></span>
+            </div>
+            <div>
+              <h3 class="process-card__title">WIREFRAME</h3>
+              <p class="process-card__desc">정보 구조와 화면 흐름을 설계합니다.</p>
+            </div>
+          </li>
+          <li class="process-card" data-reveal>
+            <div class="process-card__top">
+              <span class="process-card__step">03</span><span class="process-card__dot"></span>
+            </div>
+            <div>
+              <h3 class="process-card__title">DESIGN</h3>
+              <p class="process-card__desc">시각 언어로 경험을 완성합니다.</p>
+            </div>
+          </li>
+          <li class="process-card" data-reveal>
+            <div class="process-card__top">
+              <span class="process-card__step">04</span><span class="process-card__dot"></span>
+            </div>
+            <div>
+              <h3 class="process-card__title">PUBLISH</h3>
+              <p class="process-card__desc">디자인을 코드로 옮겨 실제 경험으로 만듭니다.</p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="rule section-foot__rule"></span>
+        <p class="section-foot__left">DESIGN WITH PURPOSE.</p>
+        <p class="section-foot__right section-foot__right--bold">2026 .</p>
+      </section>
+
+      <!-- 06 CONTACT ============================================ -->
+      <section class="section contact" id="contact" data-section="06" data-marble-dark>
+        <div class="contact__visual" data-parallax="10">
+          <span class="ring contact__ring" aria-hidden="true"></span>
+          <img class="contact__statue" src="assets/img/statue-cutout.png" alt="" />
+          <span class="ring ring--front contact__ring" aria-hidden="true"></span>
+        </div>
+
+        <p class="label contact__label">06 / CONTACT</p>
+        <p class="contact__logo">Soomln.</p>
+        <h2 class="contact__headline" data-split>LET'S WORK<br />TOGETHER<em>.</em></h2>
+        <p class="contact__lead" data-reveal>함께 만들고 싶은 경험이 있다면, 편하게 연락 주세요.</p>
+
+        <p class="contact__email-label" data-reveal="0.1">EMAIL</p>
+        <a class="contact__email" href="mailto:qnfehr948@gmail.com" data-reveal="0.15" data-cursor="hover"
+          >qnfehr948@gmail.com</a
+        >
+
+        <ul class="contact__links" data-reveal="0.2">
+          <li>
+            <button
+              class="pill"
+              type="button"
+              data-copy="qnfehr948@gmail.com"
+              data-copied-label="COPIED ✓"
+              data-cursor="hover"
+            >
+              COPY EMAIL
+            </button>
+          </li>
+        </ul>
+
+        <p class="contact__status" data-reveal="0.25">
+          <span class="contact__status-dot"></span>OPEN TO WORK · 새로운 프로젝트와 기회를 기다리고 있습니다.
+        </p>
+
+        <a class="contact__cta" href="mailto:qnfehr948@gmail.com" data-magnetic data-cursor="hover">SAY<br />HELLO ↗</a>
+
+        <span class="rule rule--light section-foot__rule"></span>
+        <p class="contact__copy">© 2026 Soomln. All rights reserved.</p>
+        <a class="contact__top" href="#hero" data-cursor="hover">BACK TO TOP ↑</a>
+      </section>
+    </main>
+
+    <script src="js/marble.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

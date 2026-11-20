@@ -1,0 +1,18 @@
+// Soomln Portfolio — 2026
+// Build: npm run build  (watch: npm run watch)
+
+@use "base/base";
+@use "layout/section";
+@use "components/cursor";
+@use "components/buttons";
+@use "components/ring";
+@use "utilities/reveal";
+
+@use "sections/hero";
+@use "sections/focus";
+@use "sections/about";
+@use "sections/works";
+@use "sections/skills";
+@use "sections/contact";
+
+@use "pages/case";

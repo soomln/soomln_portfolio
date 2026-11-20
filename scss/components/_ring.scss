@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+// Lime ring that orbits a statue. Render two copies inside the statue
+// wrapper: --back before the <img>, --front after it. The front copy only
+// shows its near (lower) half, so the ring reads as passing around the head.
+.ring {
+  position: absolute;
+  border: u(3) solid $c-lime;
+  border-radius: 50%;
+  box-shadow: 0 0 u(5) rgba($c-lime, 0.35);
+  pointer-events: none;
+
+  &--front {
+    clip-path: inset(50% -5% -10% -5%);
+  }
+}
+
+// the statue image must be positioned to paint between the two halves
+.ring + img {
+  position: relative;
+}

@@ -1,0 +1,94 @@
+@use "../abstracts" as *;
+
+// Dark circle with lime arrow (hero)
+.arrow-btn {
+  display: grid;
+  place-items: center;
+  @include circle(59);
+  background: $c-black;
+  color: $c-lime;
+  font-size: u(36);
+  line-height: 1;
+  padding-bottom: u(4);
+  transition:
+    background-color 0.4s $ease-out,
+    color 0.4s $ease-out,
+    rotate 0.5s $ease-out,
+    scale 0.5s $ease-out;
+
+  &:hover {
+    background: $c-lime;
+    color: $c-black;
+    rotate: 45deg;
+    scale: 1.12;
+  }
+}
+
+// Outline pill (contact links)
+.pill {
+  display: inline-block;
+  padding: u(14) u(26);
+  border: 1px solid rgba($c-white, 0.4);
+  border-radius: 999px;
+  background: none;     // also used on <button>
+  font-family: inherit;
+  cursor: pointer;
+  @include type(500, 17, 24, 1.02);
+  color: $c-white;
+  transition:
+    background-color 0.35s $ease-out,
+    color 0.35s $ease-out,
+    border-color 0.35s $ease-out,
+    translate 0.35s $ease-out;
+
+  &:hover {
+    background: $c-white;
+    border-color: $c-white;
+    color: $c-dark;
+    translate: 0 u(-4);
+  }
+}
+
+// Text link with growing underline
+.link-underline {
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size 0.5s $ease-out;
+
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
+// Ambient icon motion
+.icon {
+  position: absolute;
+  display: block;
+
+  // rests as a "+" and snaps a quarter turn, so it never lingers as an "×"
+  &--spin {
+    animation: icon-spin 4s $ease-in-out infinite;
+  }
+
+  &--spin-y {
+    animation: icon-bob 4s $ease-in-out infinite;
+  }
+
+  &--twinkle {
+    animation: icon-twinkle 3.2s $ease-in-out infinite;
+  }
+}
+
+@keyframes icon-spin {
+  0%, 70% { rotate: 0deg; }
+  100% { rotate: 90deg; }
+}
+
+@keyframes icon-bob {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 u(-5); }
+}
+
+@keyframes icon-twinkle {
+  0%, 100% { scale: 1; rotate: 0deg; }
+  50% { scale: 0.78; rotate: 45deg; }
+}

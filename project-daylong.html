@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAYLONG Hydra Serum — Project 02 · Soomln</title>
+    <meta
+      name="description"
+      content="가상 수분 세럼 브랜드 DAYLONG의 상세페이지를 기획부터 디자인까지 진행한 작업 과정입니다."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <!--
+  PROJECT 02 — DAYLONG 상세페이지 케이스 스터디.
+  상세페이지 이미지: assets/img/daylong/01~11.jpg (Figma에서 섹션별 1x JPG로 내보낸 것)
+  ※ 본문 문장은 초안입니다. 본인 말투로 다듬어 주세요.
+-->
+  <body class="case">
+    <canvas class="marble" id="marble" aria-hidden="true"></canvas>
+
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor__dot"></span>
+      <span class="cursor__ring"><span class="cursor__label">VIEW</span></span>
+    </div>
+    <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+    <header class="case-header">
+      <a class="case-header__back" href="index.html#works" data-cursor="hover">← WORKS</a>
+      <a class="case-header__logo" href="index.html">Soomln</a>
+      <span class="case-header__index">PROJECT 02</span>
+    </header>
+
+    <main class="page case-page">
+      <!-- COVER ================================================ -->
+      <section class="case-hero">
+        <p class="case-hero__label" data-reveal>PROJECT 02 — DETAIL PAGE</p>
+        <h1 class="case-hero__title" data-split>DAYLONG<br />HYDRA SERUM.</h1>
+        <p class="case-hero__lead" data-reveal="0.1">
+          아침에 바른 수분, 퇴근길까지.<br />
+          속건조로 오후마다 불편한 20대 직장인의 하루를 따라가는 수분 세럼 상세페이지입니다.
+        </p>
+
+        <dl class="case-meta" data-reveal="0.2">
+          <div>
+            <dt>ROLE</dt>
+            <dd>기획 · 카피 · 상세페이지 디자인</dd>
+          </div>
+          <div>
+            <dt>YEAR</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>TOOLS</dt>
+            <dd>Figma · Photoshop · AI 이미지 생성</dd>
+          </div>
+          <div>
+            <dt>TYPE</dt>
+            <dd>개인 프로젝트 (가상 브랜드)</dd>
+          </div>
+        </dl>
+
+        <figure class="case-cover" data-reveal="0.3">
+          <img
+            src="assets/img/daylong/11.jpg"
+            alt="DAYLONG 세럼 병이 물 튀김 위에 서 있고, 오늘도 하루 종일 촉촉하게라는 문구가 있는 마무리 화면"
+          />
+        </figure>
+      </section>
+
+      <!-- 01 OVERVIEW ========================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">01 / OVERVIEW</p>
+          <h2 class="case-section__title" data-split>OVERVIEW.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-lead" data-reveal>성분을 나열하는 대신, 하루를 보여 주기로 했습니다.</p>
+          <p class="case-text" data-reveal="0.1">
+            수분 세럼 상세페이지는 대부분 성분과 효능을 나열하는 데서 시작합니다. DAYLONG은 '오전엔 괜찮다가 오후 3시면
+            땅기는' 직장인의 하루를 이야기의 축으로 삼았습니다. 아침 08:00부터 퇴근길 20:00까지의 시간 흐름으로 먼저
+            공감을 이끌어낸 뒤, 성분과 보습 지속력 데이터, 제형 컷을 순차적으로 배치해 감성적 공감에서 이성적 신뢰로
+            자연스럽게 이어지도록 구성했습니다.
+          </p>
+          <ul class="case-points" data-reveal="0.2">
+            <li>타깃 — 사무실에서 하루를 보내는 20대 속건조 직장인</li>
+            <li>콘셉트 — 아침 한 번으로 퇴근길까지 이어지는 수분</li>
+            <li>규격 — 860px 상세페이지, 11개 섹션 (Figma 2배 1720px 작업)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 02 STORY ============================================= -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">02 / STORY</p>
+          <h2 class="case-section__title" data-split>STORY.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-text" data-reveal style="margin-top: 0">
+            공감 → 해결 → 근거 → 신뢰 순서로, 끝까지 스크롤하게 만드는 흐름을 먼저 설계했습니다.
+          </p>
+          <ol class="case-steps" data-stagger="0.06" style="margin-top: calc(40 * var(--u))">
+            <li data-reveal>
+              <span class="case-steps__num">01</span>
+              <h3>공감</h3>
+              <p>“오후 3시, 이런 적 있으시죠?” 볼 땅김, 화장 들뜸, 각질 세 가지 고민을 체크리스트로 보여 줍니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">02</span>
+              <h3>해결</h3>
+              <p>제품을 소개한 뒤, 같은 인물의 08:00 · 15:00 · 20:00 장면으로 하루 내내 이어지는 수분을 보여 줍니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">03</span>
+              <h3>근거</h3>
+              <p>핵심 성분 3가지와 12시간 수분 그래프, 사용자 설문 수치로 ‘왜 오래가는지’를 설명합니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">04</span>
+              <h3>신뢰</h3>
+              <p>텍스처, 사용법, 후기, 제품 정보 고시까지 구매 직전에 확인하는 정보를 차례로 정리했습니다.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 03 DESIGN SYSTEM ===================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">03 / DESIGN SYSTEM</p>
+          <h2 class="case-section__title" data-split>DESIGN.</h2>
+        </header>
+        <div class="case-section__body">
+          <p class="case-caption" data-reveal>COLOR</p>
+          <ul class="case-palette" data-reveal="0.05">
+            <li>
+              <span class="case-palette__chip" style="background: #12304a"></span><b>NAVY</b
+              ><span>#12304A · 제목, 데이터 섹션</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #1f8fb8"></span><b>DEEP AQUA</b
+              ><span>#1F8FB8 · 강조 단어</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #4fc3e8"></span><b>AQUA</b
+              ><span>#4FC3E8 · 아이콘, 그래프</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #e8f7fc"></span><b>LIGHT AQUA</b
+              ><span>#E8F7FC · 섹션 배경</span>
+            </li>
+            <li>
+              <span class="case-palette__chip" style="background: #f3f5f7"></span><b>GRAY</b
+              ><span>#F3F5F7 · 카드, 사용법</span>
+            </li>
+            <li>
+              <span class="case-palette__chip case-palette__chip--line" style="background: #ffffff"></span><b>WHITE</b
+              ><span>#FFFFFF · 기본 배경</span>
+            </li>
+          </ul>
+
+          <p class="case-caption" data-reveal>TYPOGRAPHY</p>
+          <div class="case-type" data-reveal="0.05">
+            <div class="case-type__card">
+              <span class="case-type__sample">가 Aa</span>
+              <p class="case-type__name">Pretendard</p>
+              <p class="case-type__use">TEXT — 제목, 본문 (8단계 텍스트 스타일)</p>
+            </div>
+            <div class="case-type__card">
+              <span
+                class="case-type__sample"
+                style="font-family: Montserrat, sans-serif; font-weight: 500; letter-spacing: 0.08em"
+                >Aa</span
+              >
+              <p class="case-type__name">Montserrat</p>
+              <p class="case-type__use">LABEL — 브랜드명, 영문 아이브로우, 시간</p>
+            </div>
+          </div>
+
+          <p class="case-text" data-reveal>
+            물빛 아쿠아를 기본으로, 가장 설득해야 하는 데이터 섹션에만 진한 Navy를 써서 스크롤하다 멈추게 했습니다.
+            타임라인 사진은 아침 화이트 → 오후 아쿠아 → 밤 네이비로 흘러가, 브랜드 색 자체가 하루의 시간이 되도록
+            맞췄습니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 04 DETAIL PAGE (long image viewer) ==================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">04 / DETAIL PAGE</p>
+          <h2 class="case-section__title" data-split>DETAIL.</h2>
+          <ol class="case-index" data-reveal="0.1">
+            <li><a href="#dl-01" data-cursor="hover">01 인트로</a></li>
+            <li><a href="#dl-02" data-cursor="hover">02 공감</a></li>
+            <li><a href="#dl-03" data-cursor="hover">03 제품 소개</a></li>
+            <li><a href="#dl-04" data-cursor="hover">04 하루 타임라인</a></li>
+            <li><a href="#dl-05" data-cursor="hover">05 핵심 성분</a></li>
+            <li><a href="#dl-06" data-cursor="hover">06 수분 지속력</a></li>
+            <li><a href="#dl-07" data-cursor="hover">07 텍스처</a></li>
+            <li><a href="#dl-08" data-cursor="hover">08 사용법</a></li>
+            <li><a href="#dl-09" data-cursor="hover">09 후기</a></li>
+            <li><a href="#dl-10" data-cursor="hover">10 제품 정보</a></li>
+            <li><a href="#dl-11" data-cursor="hover">11 마무리</a></li>
+          </ol>
+        </header>
+        <div class="case-section__body">
+          <p class="case-text" data-reveal style="margin-top: 0">
+            실제 쇼핑몰과 같은 860px 폭으로 전체 상세페이지를 그대로 보여 드립니다.
+          </p>
+          <!-- no data-reveal here: the viewer is taller than 15% of any screen can show, so it would never fade in -->
+          <div class="case-viewer">
+            <img
+              id="dl-01"
+              src="assets/img/daylong/01.jpg"
+              alt="01 인트로 — 물 위에 선 세럼 병과 ‘아침에 바른 수분, 퇴근길까지.’"
+              width="1720"
+              height="2400"
+            />
+            <img
+              id="dl-02"
+              src="assets/img/daylong/02.jpg"
+              alt="02 공감 — 오후 3시 사무실에서 볼을 만지는 직장인과 속건조 체크리스트"
+              width="1720"
+              height="2000"
+              loading="lazy"
+            />
+            <img
+              id="dl-03"
+              src="assets/img/daylong/03.jpg"
+              alt="03 제품 소개 — 물 튀김 위의 세럼 병, ‘하루를 버티는 수분, DAYLONG’"
+              width="1720"
+              height="1800"
+              loading="lazy"
+            />
+            <img
+              id="dl-04"
+              src="assets/img/daylong/04.jpg"
+              alt="04 하루 타임라인 — 08:00 출근 준비, 15:00 사무실, 20:00 퇴근길"
+              width="1720"
+              height="3600"
+              loading="lazy"
+            />
+            <img
+              id="dl-05"
+              src="assets/img/daylong/05.jpg"
+              alt="05 핵심 성분 — 히알루론산, 세라마이드, 판테놀"
+              width="1720"
+              height="2400"
+              loading="lazy"
+            />
+            <img
+              id="dl-06"
+              src="assets/img/daylong/06.jpg"
+              alt="06 수분 지속력 — 12시간 수분 변화 그래프와 사용자 설문 92%, 88% (예시 데이터)"
+              width="1720"
+              height="2000"
+              loading="lazy"
+            />
+            <img
+              id="dl-07"
+              src="assets/img/daylong/07.jpg"
+              alt="07 텍스처 — 스포이드에서 떨어지는 워터리 제형"
+              width="1720"
+              height="1800"
+              loading="lazy"
+            />
+            <img
+              id="dl-08"
+              src="assets/img/daylong/08.jpg"
+              alt="08 사용법 — 3단계 사용 방법과 TIP"
+              width="1720"
+              height="1600"
+              loading="lazy"
+            />
+            <img
+              id="dl-09"
+              src="assets/img/daylong/09.jpg"
+              alt="09 후기 — 예시 후기 3개"
+              width="1720"
+              height="1800"
+              loading="lazy"
+            />
+            <img
+              id="dl-10"
+              src="assets/img/daylong/10.jpg"
+              alt="10 제품 정보 — 제품명, 용량, 전성분, 주의사항 표"
+              width="1720"
+              height="2000"
+              loading="lazy"
+            />
+            <img
+              id="dl-11"
+              src="assets/img/daylong/11.jpg"
+              alt="11 마무리 — ‘오늘도 하루 종일 촉촉하게.’"
+              width="1720"
+              height="1200"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 PROCESS =========================================== -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">05 / PROCESS</p>
+          <h2 class="case-section__title" data-split>PROCESS.</h2>
+        </header>
+        <div class="case-section__body">
+          <ol class="case-steps" data-stagger="0.06">
+            <li data-reveal>
+              <span class="case-steps__num">01</span>
+              <h3>기획</h3>
+              <p>타깃과 콘셉트를 정하고, 11개 섹션의 역할과 카피를 기획서로 정리한 뒤 와이어프레임을 만들었습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">02</span>
+              <h3>이미지</h3>
+              <p>AI로 제품 컷과 장면을 생성하고, 브랜드 톤에 맞지 않는 결과는 프롬프트를 고쳐 다시 만들었습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">03</span>
+              <h3>합성</h3>
+              <p>Photoshop에서 라벨을 직접 디자인해 병 곡면에 맞춰 합성하고, 누끼·배경 확장·크롭으로 다듬었습니다.</p>
+            </li>
+            <li data-reveal>
+              <span class="case-steps__num">04</span>
+              <h3>디자인</h3>
+              <p>
+                Figma에 색상·텍스트 스타일을 먼저 만들고, 자동 레이아웃으로 카드와 표를 구성해 수정이 쉽게 했습니다.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 06 POINTS ============================================ -->
+      <section class="case-section">
+        <header class="case-section__head">
+          <p class="case-section__num">06 / DESIGN POINTS</p>
+          <h2 class="case-section__title" data-split>POINTS.</h2>
+        </header>
+        <div class="case-section__body">
+          <ul class="case-issues" data-stagger="0.06" style="margin-top: 0">
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 01</span>
+              <h3 class="case-issue__title">같은 자리, 다른 표정</h3>
+              <p class="case-issue__problem">02 공감과 04 타임라인 15:00 장면을 같은 사무실, 같은 구도로 맞췄습니다.</p>
+              <p class="case-issue__solution">찡그린 얼굴이 미소로 바뀌는 전·후 비교만으로 제품 효과를 전달합니다.</p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 02</span>
+              <h3 class="case-issue__title">제목과 짝을 이루는 문장</h3>
+              <p class="case-issue__problem">성분 설명이 따로 노는 정보가 되지 않도록 고민했습니다.</p>
+              <p class="case-issue__solution">
+                제목의 ‘채우고, 잡고, 지키는’을 세 성분의 문장 끝에 그대로 이어 붙여 강조했습니다.
+              </p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 03</span>
+              <h3 class="case-issue__title">고민이 해결되는 후기</h3>
+              <p class="case-issue__problem">후기가 막연한 칭찬으로 끝나면 설득력이 약합니다.</p>
+              <p class="case-issue__solution">
+                세 후기를 02 공감의 고민(화장 들뜸, 끈적임, 에어컨 땅김)과 하나씩 짝지었습니다.
+              </p>
+            </li>
+            <li class="case-issue" data-reveal>
+              <span class="case-issue__tag">POINT 04</span>
+              <h3 class="case-issue__title">과장하지 않는 수치</h3>
+              <p class="case-issue__problem">가상 브랜드의 그래프와 후기가 실제 결과처럼 보이면 안 됩니다.</p>
+              <p class="case-issue__solution">
+                수치마다 기준(사용자 설문)을 적고, ‘예시 데이터·예시 후기’임을 모두 표기했습니다.
+              </p>
+            </li>
+          </ul>
+          <p class="case-text case-text--small" data-reveal>
+            이미지: Google Gemini · ChatGPT로 생성 후 Photoshop 합성·보정 / 아이콘: Lucide (ISC) / 폰트: Pretendard,
+            Montserrat (SIL OFL). DAYLONG은 포트폴리오를 위한 가상 브랜드입니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- CLOSING (dark) ======================================= -->
+      <section class="case-end" data-marble-dark>
+        <h2 class="case-end__title" data-split>WHAT I<br />LEARNED<em>.</em></h2>
+        <p class="case-end__text" data-reveal>
+          독학으로 다양한 플랫폼의 레퍼런스를 분석하며 처음부터 끝까지 완성해 본 상세페이지입니다. 생성형 AI로
+          콘셉트에 맞는 이미지를 제작하고 선별하면서, 예쁜 화면보다 흐름을 잡는 기준이 중요하다는 걸 체감했습니다. 기초 자격증 이후 잊고 있던 포토샵 기능들도 필요한
+          부분을 하나씩 다시 찾아 적용하며 실전 감각을 되살릴 수 있었습니다.
+        </p>
+
+        <div class="case-next" data-reveal="0.1">
+          <p class="case-next__label">NEXT PROJECT</p>
+          <p class="case-next__title">COMING SOON.</p>
+          <a class="pill" href="index.html#works" data-cursor="hover">← BACK TO WORKS</a>
+        </div>
+
+        <span class="rule rule--light case-end__rule"></span>
+        <p class="case-end__copy">© 2026 Soomln. All rights reserved.</p>
+        <a class="case-end__top" href="#" data-cursor="hover">BACK TO TOP ↑</a>
+      </section>
+    </main>
+
+    <script src="js/marble.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

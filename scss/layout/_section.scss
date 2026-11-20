@@ -1,0 +1,147 @@
+@use "../abstracts" as *;
+
+// WebGL marble layer — sits behind every section
+.marble {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: u($section-h);
+  overflow: hidden;
+  color: $c-black;
+}
+
+// Fallback when WebGL is unavailable: static marble, same look as Figma
+// (exclusion over white ≈ inverted image at 15%).
+.no-webgl {
+  .marble {
+    display: none;
+  }
+
+  .section {
+    background: $c-white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("../assets/img/marble.png") center / cover no-repeat;
+      opacity: 0.15;
+      filter: invert(1);
+      pointer-events: none;
+    }
+  }
+
+  .contact {
+    background: $c-dark;
+
+    &::before {
+      opacity: 0.07;
+      filter: none;
+    }
+  }
+}
+
+// Shared horizontal rules
+.rule {
+  position: absolute;
+  display: block;
+  background: $c-black;
+  transform-origin: left center;
+
+  &--light {
+    background: rgba($c-white, 0.3);
+  }
+}
+
+.label {
+  color: $c-gray;
+}
+
+// Header block used by 04 / 05
+.section-head {
+  &__label {
+    @include pos(18, 34);
+    @include type(500, 24, 28, -0.72);
+    color: $c-black;
+  }
+
+  &__title {
+    @include pos(18, 78);
+    @include type(400, 138, 125, 1.38);
+    font-family: $f-display;
+    white-space: nowrap;
+  }
+
+  &__lead {
+    @include pos(18, 222);
+    @include type(500, 26, 28, -1.3);
+  }
+
+  &__rule {
+    @include pos(18, 272, 1404, 1);
+    opacity: 0.8;
+  }
+}
+
+.section-foot {
+  &__rule {
+    @include pos(27, 968, 1386, 1);
+    opacity: 0.8;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: u(984);
+    @include type(500, 18, 26, 0.72);
+  }
+
+  &__left {
+    left: u(18);
+  }
+
+  &__right {
+    right: u(18);
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+}
+
+// Decorative swatch column (lime → charcoal)
+.swatches {
+  display: flex;
+  flex-direction: column;
+  gap: u(10);
+}
+
+.swatch {
+  width: u(25);
+  height: u(25);
+  transition: transform 0.5s $ease-out;
+
+  &--lime { background: $c-lime; }
+  &--g1 { background: $c-gray-light; }
+  &--g2 { background: $c-gray; }
+  &--g3 { background: $c-black; }
+
+  .swatches:hover & {
+    transform: translateX(u(-8));
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) * 0.05}s;
+      }
+    }
+  }
+}

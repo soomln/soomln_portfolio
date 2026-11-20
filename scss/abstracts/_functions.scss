@@ -1,0 +1,5 @@
+// Converts a Figma pixel value into a fluid length.
+// --u is "1 design pixel" = viewport width / 1440 (set in base, refined by JS).
+@function u($px) {
+  @return calc(#{$px} * var(--u));
+}

@@ -1,0 +1,41 @@
+@use "functions" as *;
+
+// Absolute placement using Figma frame coordinates
+@mixin pos($x, $y, $w: null, $h: null) {
+  position: absolute;
+  left: u($x);
+  top: u($y);
+  @if $w { width: u($w); }
+  @if $h { height: u($h); }
+}
+
+// Figma "centered" text boxes: the given y is the vertical center
+@mixin center-y($x, $cy) {
+  position: absolute;
+  left: u($x);
+  top: u($cy);
+  transform: translateY(-50%);
+}
+
+@mixin type($weight, $size, $lh: normal, $ls: 0) {
+  font-weight: $weight;
+  font-size: u($size);
+  @if $lh == normal {
+    line-height: normal;
+  } @else {
+    line-height: u($lh);
+  }
+  letter-spacing: u($ls);
+}
+
+// Matches Figma's "vertical trim" (cap height → baseline)
+@mixin trim {
+  text-box: trim-both cap alphabetic;
+  white-space: nowrap;
+}
+
+@mixin circle($size) {
+  width: u($size);
+  height: u($size);
+  border-radius: 50%;
+}

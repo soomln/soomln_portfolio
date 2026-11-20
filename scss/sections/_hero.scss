@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+
+.hero {
+  &__logo {
+    @include pos(20, 20);
+    @include type(800, 36);
+    line-height: u(53);
+  }
+
+  &__meta {
+    position: absolute;
+    top: u(20);
+    right: u(20);
+    @include type(300, 24, 38, 1.2);
+    color: $c-gray;
+  }
+
+  // Left column (Figma "Frame 5": 20, 255 / 570 × 412)
+  &__intro {
+    @include pos(20, 255, 570, 412);
+  }
+
+  &__role {
+    display: flex;
+    align-items: center;
+    gap: u(27);
+    height: u(53);
+    @include type(400, 24);
+    color: $c-gray;
+  }
+
+  &__role-dot {
+    @include circle(25);
+    background: $c-lime;
+    animation: hero-pulse 2.4s $ease-in-out infinite;
+  }
+
+  &__title {
+    @include pos(0, 89.5);
+    @include type(900, 74);
+    color: $c-black;
+  }
+
+  &__arrow {
+    @include pos(255.5, 195);
+  }
+
+  &__lead {
+    @include pos(0, 379);
+    @include type(500, 28);
+    color: $c-gray;
+    white-space: nowrap;
+  }
+
+  &__expertise {
+    @include pos(20, 896);
+    display: flex;
+    flex-direction: column;
+    gap: u(2);
+    @include type(400, 28, 53);
+    color: $c-gray;
+  }
+
+  &__scroll {
+    @include pos(1325, 981);
+    @include type(300, 20, 33);
+    color: $c-gray-light;
+    animation: hero-scroll 2s $ease-in-out infinite;
+  }
+
+  // Fractured statue seen through the three-slice mask (Figma "Mask group")
+  &__visual {
+    @include pos(779, 94, 651, 837);
+    opacity: 0.76;
+    -webkit-mask: url("../assets/svg/hero-mask.svg") no-repeat u(125) u(20) / u(474) u(797);
+    mask: url("../assets/svg/hero-mask.svg") no-repeat u(125) u(20) / u(474) u(797);
+    transition: opacity 0.6s $ease-out;
+
+    &:hover {
+      opacity: 0.92;
+    }
+  }
+
+  &__statue {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.08;
+    transition: scale 1.2s $ease-out;
+
+    .hero__visual:hover & {
+      scale: 1.14;
+    }
+  }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba($c-lime, 0.55); }
+  60% { box-shadow: 0 0 0 u(12) rgba($c-lime, 0); }
+}
+
+@keyframes hero-scroll {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 u(6); }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soomln Portfolio — Project 01 · Soomln</title>
+  <meta name="description" content="Figma로 디자인하고 HTML · Sass · JavaScript · WebGL로 구현한 포트폴리오 웹사이트의 작업 과정입니다." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<!--
+  프로젝트 상세(케이스 스터디) 페이지 템플릿.
+  새 작업물을 추가할 때는 이 파일을 복사해 내용과 이미지만 바꾸면 됩니다.
+-->
+<body class="case">
+  <canvas class="marble" id="marble" aria-hidden="true"></canvas>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label">VIEW</span></span>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <header class="case-header">
+    <a class="case-header__back" href="index.html#works" data-cursor="hover">← WORKS</a>
+    <a class="case-header__logo" href="index.html">Soomln</a>
+    <span class="case-header__index">PROJECT 01</span>
+  </header>
+
+  <main class="page case-page">
+
+    <!-- COVER ================================================ -->
+    <section class="case-hero">
+      <p class="case-hero__label" data-reveal>PROJECT 01 — PORTFOLIO WEB</p>
+      <h1 class="case-hero__title" data-split>SOOMLN<br />PORTFOLIO.</h1>
+      <p class="case-hero__lead" data-reveal="0.1">
+        디자인을 이해하고, 코드로 경험을 완성합니다.<br />
+        그 문장을 보여 주기 위해 포트폴리오 사이트 자체를 첫 번째 프로젝트로 만들었습니다.
+      </p>
+
+      <dl class="case-meta" data-reveal="0.2">
+        <div><dt>ROLE</dt><dd>UI 디자인 · 웹 퍼블리싱</dd></div>
+        <div><dt>YEAR</dt><dd>2026</dd></div>
+        <div><dt>TOOLS</dt><dd>Figma · HTML · Sass · JavaScript · WebGL</dd></div>
+        <div><dt>TYPE</dt><dd>개인 프로젝트</dd></div>
+      </dl>
+
+      <figure class="case-cover" data-reveal="0.3">
+        <img src="assets/img/case/cover.jpg" alt="포트폴리오 첫 화면. DESIGN MEETS CODE 문구와 사선으로 조각난 대리석 흉상" />
+      </figure>
+    </section>
+
+    <!-- 01 OVERVIEW ========================================== -->
+    <section class="case-section">
+      <header class="case-section__head">
+        <p class="case-section__num">01 / OVERVIEW</p>
+        <h2 class="case-section__title" data-split>OVERVIEW.</h2>
+      </header>
+      <div class="case-section__body">
+        <p class="case-lead" data-reveal>고전 조각상과 대리석, 그리고 라임 한 방울.</p>
+        <p class="case-text" data-reveal="0.1">
+          포트폴리오의 첫인상은 ‘디자인과 코드가 만나는 곳’이어야 했습니다.
+          고전 조각상을 잘라 다시 붙인 콜라주로 해체와 재구성을, 흐르는 연기 배경으로 살아 움직이는 화면을 표현했습니다.
+          차분한 무채색 위에 형광 라임 하나만 포인트로 써서 시선이 머물 곳을 분명하게 했습니다.
+        </p>
+        <ul class="case-points" data-reveal="0.2">
+          <li>6개 섹션으로 이어지는 원페이지 구성</li>
+          <li>1440px 시안 비율을 그대로 유지하는 데스크톱 웹</li>
+          <li>커서에 반응해 흩어지는 WebGL 연기 배경</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 DESIGN SYSTEM ===================================== -->
+    <section class="case-section">
+      <header class="case-section__head">
+        <p class="case-section__num">02 / DESIGN SYSTEM</p>
+        <h2 class="case-section__title" data-split>DESIGN.</h2>
+      </header>
+      <div class="case-section__body">
+        <p class="case-caption" data-reveal>COLOR</p>
+        <ul class="case-palette" data-reveal="0.05">
+          <li><span class="case-palette__chip" style="background:#3b3838"></span><b>BLACK</b><span>#3B3838 · 제목·본문</span></li>
+          <li><span class="case-palette__chip" style="background:#57575c"></span><b>GRAY</b><span>#57575C · 보조 텍스트</span></li>
+          <li><span class="case-palette__chip" style="background:#757577"></span><b>LIGHT GRAY</b><span>#757577 · 캡션</span></li>
+          <li><span class="case-palette__chip" style="background:#97fd31"></span><b>LIME</b><span>#97FD31 · 포인트</span></li>
+          <li><span class="case-palette__chip" style="background:#222223"></span><b>DARK</b><span>#222223 · 마무리 섹션</span></li>
+          <li><span class="case-palette__chip case-palette__chip--line" style="background:#ffffff"></span><b>WHITE</b><span>#FFFFFF · 배경</span></li>
+        </ul>
+
+        <p class="case-caption" data-reveal>TYPOGRAPHY</p>
+        <div class="case-type" data-reveal="0.05">
+          <div class="case-type__card">
+            <span class="case-type__sample case-type__sample--display">Aa</span>
+            <p class="case-type__name">Anton</p>
+            <p class="case-type__use">DISPLAY — 섹션 제목, 숫자</p>
+          </div>
+          <div class="case-type__card">
+            <span class="case-type__sample">가 Aa</span>
+            <p class="case-type__name">Pretendard</p>
+            <p class="case-type__use">TEXT — 본문, 라벨 (Light ~ Black)</p>
+          </div>
+        </div>
+
+        <p class="case-caption" data-reveal>FIGMA → WEB</p>
+        <div class="case-compare" data-reveal="0.05">
+          <figure>
+            <img src="assets/img/case/figma-about.png" alt="Figma에서 디자인한 About 섹션 시안" />
+            <figcaption><b>FIGMA</b> 시안</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/case/section-03.jpg" alt="웹으로 구현한 About 섹션" />
+            <figcaption><b>WEB</b> 구현 결과 — 링이 머리를 감싸도록 앞뒤를 나눠 입체감을 더했습니다.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 SECTIONS ========================================== -->
+    <section class="case-section">
+      <header class="case-section__head">
+        <p class="case-section__num">03 / SECTIONS</p>
+        <h2 class="case-section__title" data-split>SCENES.</h2>
+      </header>
+      <div class="case-section__body">
+        <p class="case-text" data-reveal>매거진을 넘기듯 한 장면씩 이어지도록 여섯 개의 섹션을 1440 × 1024 프레임으로 설계했습니다.</p>
+        <ul class="case-gallery" data-stagger="0.06" data-cols="3">
+          <li data-reveal><figure><img src="assets/img/case/section-01.jpg" alt="01 Hero 섹션" loading="lazy" /><figcaption>01 HERO</figcaption></figure></li>
+          <li data-reveal><figure><img src="assets/img/case/section-02.jpg" alt="02 Focus 섹션" loading="lazy" /><figcaption>02 FOCUS</figcaption></figure></li>
+          <li data-reveal><figure><img src="assets/img/case/section-03.jpg" alt="03 About 섹션" loading="lazy" /><figcaption>03 ABOUT</figcaption></figure></li>
+          <li data-reveal><figure><img src="assets/img/case/section-04.jpg" alt="04 Works 섹션" loading="lazy" /><figcaption>04 WORKS</figcaption></figure></li>
+          <li data-reveal><figure><img src="assets/img/case/section-05.jpg" alt="05 Skills 섹션" loading="lazy" /><figcaption>05 SKILLS</figcaption></figure></li>
+          <li data-reveal><figure><img src="assets/img/case/section-06.jpg" alt="06 Contact 섹션" loading="lazy" /><figcaption>06 CONTACT</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 DEVELOPMENT ======================================= -->
+    <section class="case-section">
+      <header class="case-section__head">
+        <p class="case-section__num">04 / DEVELOPMENT</p>
+        <h2 class="case-section__title" data-split>BUILD.</h2>
+      </header>
+      <div class="case-section__body">
+        <ol class="case-steps" data-stagger="0.06">
+          <li data-reveal><span class="case-steps__num">01</span><h3>구조</h3><p>시맨틱 HTML로 6개 섹션을 마크업하고, 반복되는 카드와 버튼을 컴포넌트 단위로 나눴습니다.</p></li>
+          <li data-reveal><span class="case-steps__num">02</span><h3>스타일</h3><p>Sass를 역할별 파일로 분리하고, 시안의 1px을 화면 비율로 바꾸는 함수로 1440px 비율을 유지했습니다.</p></li>
+          <li data-reveal><span class="case-steps__num">03</span><h3>인터랙션</h3><p>커스텀 커서, 스크롤 등장, 마우스 패럴랙스, 마그네틱 버튼으로 손에 반응하는 화면을 만들었습니다.</p></li>
+          <li data-reveal><span class="case-steps__num">04</span><h3>배경</h3><p>WebGL 셰이더로 연기를 실시간 생성하고, 커서 속도를 기록해 지나간 자리의 연기가 흩어지게 했습니다.</p></li>
+        </ol>
+
+        <div class="case-code" data-reveal>
+          <p class="case-code__label">SCSS — 시안 비율을 지키는 단위 함수</p>
+<pre><code><span class="c">// 1 design px = viewport width / 1440</span>
+<span class="k">@function</span> <span class="f">u</span>($px) {
+  <span class="k">@return</span> calc(#{$px} * var(--u));
+}
+
+<span class="c">// Figma x, y, w, h copied as-is (_hero.scss)</span>
+.hero__visual {
+  <span class="k">@include</span> <span class="f">pos</span>(779, 94, 651, 837);
+  opacity: 0.76;
+}</code></pre>
+        </div>
+        <p class="case-text case-text--small" data-reveal>지금 이 페이지의 배경도 같은 연기 셰이더입니다. 커서를 움직여 보세요.</p>
+      </div>
+    </section>
+
+    <!-- 05 PROBLEM → SOLUTION ================================ -->
+    <section class="case-section">
+      <header class="case-section__head">
+        <p class="case-section__num">05 / PROBLEM → SOLUTION</p>
+        <h2 class="case-section__title" data-split>FIXES.</h2>
+      </header>
+      <div class="case-section__body">
+        <p class="case-text" data-reveal>정적인 시안에서는 보이지 않다가, 브라우저에서 움직이기 시작하자 드러난 문제들입니다.</p>
+        <ul class="case-issues" data-stagger="0.06">
+          <li class="case-issue" data-reveal>
+            <span class="case-issue__tag">PROBLEM 01</span>
+            <h3 class="case-issue__title">섹션 사이의 경계선</h3>
+            <p class="case-issue__problem">섹션마다 배경 무늬를 새로 그려서, 넘어가는 지점에 이음새가 보였습니다.</p>
+            <p class="case-issue__solution">페이지 전체를 하나의 연속된 무늬로 계산하도록 바꿔 경계를 없앴습니다.</p>
+          </li>
+          <li class="case-issue" data-reveal>
+            <span class="case-issue__tag">PROBLEM 02</span>
+            <h3 class="case-issue__title">확대하면 깨지는 배경</h3>
+            <p class="case-issue__problem">원본 대리석 이미지가 564px로 작아 큰 화면에서 픽셀이 드러났습니다.</p>
+            <p class="case-issue__solution">이미지 대신 셰이더로 무늬를 직접 생성해 해상도 제한 자체를 없앴습니다.</p>
+          </li>
+          <li class="case-issue" data-reveal>
+            <span class="case-issue__tag">PROBLEM 03</span>
+            <h3 class="case-issue__title">따로 노는 조각상과 도형</h3>
+            <p class="case-issue__problem">마우스 패럴랙스 때 조각상만 움직여 아래 도형·그림자와 어긋났습니다.</p>
+            <p class="case-issue__solution">함께 움직여야 하는 요소를 하나의 묶음으로 만들어 같은 값으로 이동시켰습니다.</p>
+          </li>
+          <li class="case-issue" data-reveal>
+            <span class="case-issue__tag">PROBLEM 04</span>
+            <h3 class="case-issue__title">끊겨 보이는 궤도 링</h3>
+            <p class="case-issue__problem">시안의 링이 열린 호라서 머리 위쪽이 잘려 보였습니다.</p>
+            <p class="case-issue__solution">완전한 타원을 앞·뒤 절반으로 나눠, 링이 머리를 감싸 도는 입체감을 만들었습니다.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CLOSING (dark) ======================================= -->
+    <section class="case-end" data-marble-dark>
+      <h2 class="case-end__title" data-split>WHAT I<br />LEARNED<em>.</em></h2>
+      <p class="case-end__text" data-reveal>
+        시안을 그대로 옮기는 것보다, 브라우저에서 실제로 움직였을 때 어떻게 보이는지가 더 중요하다는 것을 배웠습니다.
+        이음새와 해상도, 움직임처럼 정지된 화면에서는 보이지 않던 문제를 하나씩 해결하며
+        ‘디자인을 코드로 완성한다’는 말의 의미를 체감했습니다.
+      </p>
+
+      <div class="case-next" data-reveal="0.1">
+        <p class="case-next__label">NEXT PROJECT</p>
+        <p class="case-next__title">COMING SOON.</p>
+        <a class="pill" href="index.html#works" data-cursor="hover">← BACK TO WORKS</a>
+      </div>
+
+      <span class="rule rule--light case-end__rule"></span>
+      <p class="case-end__copy">© 2026 Soomln. All rights reserved.</p>
+      <a class="case-end__top" href="#" data-cursor="hover">BACK TO TOP ↑</a>
+    </section>
+  </main>
+
+  <script src="js/marble.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
