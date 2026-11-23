@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CHARWELL 프로모션 페이지 와이어프레임</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400&family=Oswald:wght@400;500&display=swap" />
+  <style>
+    /* Wireframe only: grey boxes, real copy, no final styling.
+       Spec: docs/superpowers/specs/2026-11-20-charwell-bourbon-promo-design.md
+       Desktop column = 1440 at 50% (720px). Mobile column = 390 at 70% (273px). */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #d9dbde; font-family: "Pretendard", sans-serif; color: #33373c; padding: 40px 0 80px; }
+    .legend { width: 1080px; margin: 0 auto 24px; font: 400 13px/1.7 "Pretendard"; color: #444; }
+    .legend b { color: #e4572e; }
+
+    .row { width: 1080px; margin: 0 auto 36px; display: grid; grid-template-columns: 720px 273px; gap: 87px; align-items: start; }
+    .col-title { font: 600 12px/1 "Pretendard"; letter-spacing: .06em; color: #6b7178; margin-bottom: 8px; }
+
+    .frame { position: relative; overflow: hidden; border: 1px solid #9aa0a6; }
+    .dark  { background: #3a3d41; color: #eef0f2; }   /* = Char Black / Barrel */
+    .light { background: #f4f4f2; color: #33373c; }   /* = Parchment */
+
+    .tag { position: absolute; top: 10px; left: 10px; z-index: 5; font: 700 11px/1 "Pretendard";
+      letter-spacing: .08em; padding: 5px 9px; background: #e4572e; color: #fff; border-radius: 4px; }
+    .h { position: absolute; top: 10px; right: 10px; z-index: 5; font: 500 11px/1 "Pretendard"; opacity: .7; }
+    .note { font: 400 11px/1.5 "Pretendard"; opacity: .65; }
+    .ix { display: inline-block; padding: 3px 7px; border: 1px dashed currentColor; border-radius: 4px;
+      font: 500 10px/1.3 "Pretendard"; opacity: .8; }
+
+    .img { position: relative; display: grid; place-items: center; text-align: center;
+      font: 500 11px/1.5 "Pretendard"; color: #6b7178; background: #c9ccd0;
+      background-image:
+        linear-gradient(to top right, transparent calc(50% - .5px), #a9adb2 50%, transparent calc(50% + .5px)),
+        linear-gradient(to top left, transparent calc(50% - .5px), #a9adb2 50%, transparent calc(50% + .5px)); }
+    .img span { background: #c9ccd0; padding: 3px 7px; }
+    .dark .img { background-color: #55595e; color: #c9ccd0; background-image:
+        linear-gradient(to top right, transparent calc(50% - .5px), #6b7076 50%, transparent calc(50% + .5px)),
+        linear-gradient(to top left, transparent calc(50% - .5px), #6b7076 50%, transparent calc(50% + .5px)); }
+    .dark .img span { background: #55595e; }
+
+    .serif { font-family: "Fraunces", serif; font-weight: 300; }
+    .label { font: 500 10px/1 "Oswald"; letter-spacing: .22em; opacity: .75; }
+    .body { font: 400 12px/1.6 "Pretendard"; opacity: .85; }
+    .btn { display: inline-block; border: 1px solid currentColor; border-radius: 999px; padding: 8px 16px; font: 500 11px/1 "Oswald"; letter-spacing: .12em; }
+    .center { text-align: center; }
+    .flex { display: flex; }
+    .bar { height: 6px; background: #c4c8cd; border-radius: 3px; overflow: hidden; }
+    .bar i { display: block; height: 100%; background: #6b7178; }
+    .smoke { position: absolute; inset: auto 0 0 0; height: 55%;
+      background: repeating-linear-gradient(-20deg, transparent 0 14px, rgba(255,255,255,.06) 14px 28px); }
+  </style>
+</head>
+<body>
+<p class="legend">
+  <b>CHARWELL — Kentucky Straight Bourbon</b> 프로모션 웹페이지 와이어프레임 ·
+  왼쪽 = 데스크톱 1440 (50% 축소) · 오른쪽 = 모바일 390 (70% 축소) ·
+  짙은 회색 = 어두운 섹션(Char Black / Barrel), 밝은 회색 = Parchment 섹션 · 점선 상자 = 인터랙션 메모
+</p>
+
+<!-- 01 HERO ========================================================= -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame dark" style="height:450px;">
+      <span class="tag">01 HERO</span><span class="h">h 900 (100vh)</span>
+      <!-- header -->
+      <div class="flex" style="position:absolute; top:34px; left:30px; right:30px; justify-content:space-between; align-items:center;">
+        <span class="serif" style="font-size:15px;">CHARWELL</span>
+        <span class="label" style="opacity:.6;">ORIGIN · TASTING · PAIRING · COLLECTION</span>
+        <span class="label">19+</span>
+      </div>
+      <div class="smoke"></div>
+      <div class="img" style="position:absolute; left:290px; top:90px; width:140px; height:290px;"><span>병 정면<br />누끼</span></div>
+      <p class="label" style="position:absolute; left:30px; top:180px;">KENTUCKY STRAIGHT BOURBON</p>
+      <h1 class="serif" style="position:absolute; left:26px; top:200px; font-size:76px; line-height:1;">CHAR<br />WELL</h1>
+      <p class="body" style="position:absolute; right:30px; top:250px; width:180px; text-align:right;">불에 그을린 통에서,<br />켄터키의 여름을 여덟 번.</p>
+      <p class="label" style="position:absolute; left:50%; bottom:20px; translate:-50% 0;">SCROLL ↓</p>
+      <span class="ix" style="position:absolute; right:30px; bottom:60px;">호박색 WebGL 연기 · 커서가 지나가면 흩어짐</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame dark" style="height:590px;">
+      <span class="tag">01</span>
+      <div class="flex" style="position:absolute; top:34px; left:16px; right:16px; justify-content:space-between;">
+        <span class="serif" style="font-size:13px;">CHARWELL</span><span class="label">☰</span>
+      </div>
+      <div class="smoke"></div>
+      <p class="label center" style="position:absolute; top:96px; width:100%;">KENTUCKY STRAIGHT BOURBON</p>
+      <h1 class="serif center" style="position:absolute; top:114px; width:100%; font-size:44px; line-height:1;">CHARWELL</h1>
+      <div class="img" style="position:absolute; left:68px; top:190px; width:136px; height:270px;"><span>병<br />(너비 70%)</span></div>
+      <p class="body center" style="position:absolute; top:480px; width:100%;">불에 그을린 통에서,<br />켄터키의 여름을 여덟 번.</p>
+      <p class="label center" style="position:absolute; bottom:16px; width:100%;">SCROLL ↓</p>
+    </div>
+  </div>
+</div>
+
+<!-- 02 ORIGIN ======================================================= -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame dark" style="height:450px;">
+      <span class="tag">02 ORIGIN</span><span class="h">화면 고정 · 스크롤 4화면 분량</span>
+      <div style="position:absolute; left:30px; top:60px; width:280px;">
+        <p class="label">02 / ORIGIN</p>
+        <h2 class="serif" style="font-size:40px; line-height:1.05; margin-top:10px;">Born<br />in Fire</h2>
+        <ol style="list-style:none; margin-top:30px; border-top:1px solid rgba(255,255,255,.3);">
+          <li style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,.15); opacity:.45;"><span class="label">01</span>&nbsp; CORN</li>
+          <li style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,.15); opacity:.45;"><span class="label">02</span>&nbsp; LIMESTONE WATER</li>
+          <li style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,.15);"><span class="label">03</span>&nbsp; <b>CHAR</b>
+            <p class="body" style="margin-top:6px;">새 오크통 안쪽을 불로 45초간 그을립니다.<br />바닐라와 캐러멜이 이 불에서 나옵니다.</p></li>
+          <li style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,.15); opacity:.45;"><span class="label">04</span>&nbsp; RICKHOUSE</li>
+        </ol>
+      </div>
+      <div class="img" style="position:absolute; left:340px; top:40px; width:350px; height:370px;"><span>현재 단계 사진<br />(03 = 불타는 통 안쪽)</span></div>
+      <span class="ix" style="position:absolute; left:350px; bottom:12px;">스크롤하면 왼쪽 단계 강조 + 오른쪽 사진이 바뀜 (position: sticky)</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame dark" style="height:640px; padding:40px 16px;">
+      <span class="tag">02</span>
+      <p class="label">02 / ORIGIN</p>
+      <h2 class="serif" style="font-size:30px; line-height:1.05; margin:8px 0 16px;">Born in Fire</h2>
+      <div class="img" style="height:120px;"><span>01 CORN</span></div>
+      <p class="body" style="margin:6px 0 14px;">옥수수 72%. 버번의 단맛은 여기서…</p>
+      <div class="img" style="height:120px;"><span>02 LIMESTONE WATER</span></div>
+      <p class="body" style="margin:6px 0 14px;">석회암을 지나온 샘물이…</p>
+      <div class="img" style="height:120px;"><span>03 CHAR</span></div>
+      <p class="body" style="margin:6px 0 14px;">불로 45초간 그을립니다…</p>
+      <p class="note">↓ 04 RICKHOUSE (같은 방식)</p>
+      <span class="ix" style="margin-top:8px;">sticky 없이 세로로 쌓기</span>
+    </div>
+  </div>
+</div>
+
+<!-- 03 TASTING ====================================================== -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame light" style="height:420px; padding:50px 30px;">
+      <span class="tag">03 TASTING</span><span class="h">h 약 840</span>
+      <p class="label">03 / TASTING</p>
+      <h2 class="serif" style="font-size:40px; margin:8px 0 26px;">In the Glass</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; border-top:1px solid #9aa0a6; padding-top:16px;">
+        <div><p class="label">NOSE 향</p><p class="body" style="margin-top:6px;">바닐라 · 구운 오크 · 꿀</p></div>
+        <div><p class="label">PALATE 맛</p><p class="body" style="margin-top:6px;">캐러멜 · 시나몬 · 말린 체리</p></div>
+        <div><p class="label">FINISH 여운</p><p class="body" style="margin-top:6px;">길고 따뜻한 스모크</p></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px 40px; margin-top:30px;">
+        <div><p class="label">단맛 4/5</p><div class="bar" style="margin-top:6px;"><i style="width:80%"></i></div></div>
+        <div><p class="label">스파이스 3/5</p><div class="bar" style="margin-top:6px;"><i style="width:60%"></i></div></div>
+        <div><p class="label">오크 4/5</p><div class="bar" style="margin-top:6px;"><i style="width:80%"></i></div></div>
+        <div><p class="label">스모크 2/5</p><div class="bar" style="margin-top:6px;"><i style="width:40%"></i></div></div>
+      </div>
+      <p class="label" style="margin-top:28px;">45% ABV (90 PROOF) · 8 YEARS · 700ML</p>
+      <span class="ix" style="position:absolute; right:30px; bottom:20px;">화면에 들어오면 막대가 0 → 값까지 채워짐</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame light" style="height:500px; padding:40px 16px;">
+      <span class="tag">03</span>
+      <p class="label">03 / TASTING</p>
+      <h2 class="serif" style="font-size:30px; margin:8px 0 16px;">In the Glass</h2>
+      <p class="label">NOSE</p><p class="body" style="margin:4px 0 10px;">바닐라 · 구운 오크 · 꿀</p>
+      <p class="label">PALATE</p><p class="body" style="margin:4px 0 10px;">캐러멜 · 시나몬 · 말린 체리</p>
+      <p class="label">FINISH</p><p class="body" style="margin:4px 0 18px;">길고 따뜻한 스모크</p>
+      <p class="label">단맛</p><div class="bar" style="margin:5px 0 10px;"><i style="width:80%"></i></div>
+      <p class="label">스파이스</p><div class="bar" style="margin:5px 0 10px;"><i style="width:60%"></i></div>
+      <p class="label">오크</p><div class="bar" style="margin:5px 0 10px;"><i style="width:80%"></i></div>
+      <p class="label">스모크</p><div class="bar" style="margin:5px 0 10px;"><i style="width:40%"></i></div>
+      <p class="note">3열 → 1열, 막대 2열 → 1열</p>
+    </div>
+  </div>
+</div>
+
+<!-- 04 PAIRING ====================================================== -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame dark" style="height:420px; padding:50px 30px;">
+      <span class="tag">04 PAIRING</span><span class="h">h 약 840</span>
+      <div class="flex" style="justify-content:space-between; align-items:flex-end;">
+        <div><p class="label">04 / PAIRING</p><h2 class="serif" style="font-size:40px; margin-top:8px;">By the Fire</h2></div>
+        <p class="body" style="width:220px;">같은 불에서 온 맛들.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px;">
+        <div><div class="img" style="height:200px;"><span>숯불 고기<br />+ 잔</span></div><p style="margin-top:8px; font-weight:600;">숯불 고기</p><p class="body">기름진 고기와 그을린 오크의 단맛은…</p></div>
+        <div><div class="img" style="height:200px;"><span>피칸파이</span></div><p style="margin-top:8px; font-weight:600;">피칸파이</p><p class="body">캐러멜과 견과류, 디저트 한 조각이…</p></div>
+        <div><div class="img" style="height:200px;"><span>다크초콜릿</span></div><p style="margin-top:8px; font-weight:600;">다크초콜릿</p><p class="body">쌉쌀한 카카오가 바닐라 향을…</p></div>
+      </div>
+      <span class="ix" style="position:absolute; right:30px; top:50px;">카드 호버: 사진 확대 + 설명 위로 등장</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame dark" style="height:560px; padding:40px 16px;">
+      <span class="tag">04</span>
+      <p class="label">04 / PAIRING</p>
+      <h2 class="serif" style="font-size:30px; margin:8px 0 16px;">By the Fire</h2>
+      <div class="img" style="height:120px;"><span>숯불 고기</span></div><p class="body" style="margin:6px 0 12px;"><b>숯불 고기</b> — 기름진 고기와…</p>
+      <div class="img" style="height:120px;"><span>피칸파이</span></div><p class="body" style="margin:6px 0 12px;"><b>피칸파이</b> — 캐러멜과 견과류…</p>
+      <div class="img" style="height:80px;"><span>다크초콜릿</span></div>
+      <span class="ix" style="margin-top:8px;">호버 없음 → 설명 처음부터 보임</span>
+    </div>
+  </div>
+</div>
+
+<!-- 05 COLLECTION =================================================== -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame dark" style="height:440px; padding:50px 30px; background:#45403b;">
+      <span class="tag">05 COLLECTION</span><span class="h">h 900 · 배경 Barrel</span>
+      <p class="label">05 / COLLECTION</p>
+      <h2 class="serif" style="font-size:40px; margin:8px 0 22px;">The Line</h2>
+      <div class="flex" style="gap:8px;">
+        <span class="btn" style="background:#eef0f2; color:#3a3d41;">SMALL BATCH</span>
+        <span class="btn">SINGLE BARREL</span>
+        <span class="btn">BARREL PROOF</span>
+      </div>
+      <div class="img" style="position:absolute; left:70px; top:170px; width:150px; height:240px;"><span>선택한 병</span></div>
+      <div style="position:absolute; left:330px; top:190px; width:340px;">
+        <p class="label">SMALL BATCH</p>
+        <p class="serif" style="font-size:30px; margin:8px 0;">처음 만나는 CHARWELL</p>
+        <div class="flex" style="gap:28px; margin:14px 0;">
+          <div><p class="label">AGE</p><p class="serif" style="font-size:26px;">8</p></div>
+          <div><p class="label">ABV</p><p class="serif" style="font-size:26px;">45%</p></div>
+          <div><p class="label">SIZE</p><p class="serif" style="font-size:26px;">700ml</p></div>
+        </div>
+        <p class="body">바닐라와 캐러멜이 중심인, 가장 부드러운 한 병.</p>
+      </div>
+      <span class="ix" style="position:absolute; right:30px; bottom:16px;">탭 클릭 → 병 이미지 · 정보 페이드 전환</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame dark" style="height:520px; padding:40px 16px; background:#45403b;">
+      <span class="tag">05</span>
+      <p class="label">05 / COLLECTION</p>
+      <h2 class="serif" style="font-size:30px; margin:8px 0 14px;">The Line</h2>
+      <div class="flex" style="gap:6px; overflow:hidden; white-space:nowrap;">
+        <span class="btn" style="background:#eef0f2; color:#3a3d41; padding:7px 10px;">SMALL BATCH</span>
+        <span class="btn" style="padding:7px 10px;">SINGLE BARREL</span>
+        <span class="btn" style="padding:7px 10px;">BARREL…</span>
+      </div>
+      <div class="img" style="width:120px; height:200px; margin:18px auto;"><span>병</span></div>
+      <p class="serif center" style="font-size:20px;">처음 만나는 CHARWELL</p>
+      <p class="label center" style="margin-top:10px;">8 YEARS · 45% · 700ML</p>
+      <p class="note center" style="margin-top:12px;">탭은 가로 스크롤</p>
+    </div>
+  </div>
+</div>
+
+<!-- 06 FINALE ======================================================= -->
+<div class="row">
+  <div>
+    <p class="col-title">DESKTOP</p>
+    <div class="frame dark" style="height:440px;">
+      <span class="tag">06 FINALE</span><span class="h">h 약 880 + 푸터</span>
+      <div class="img" style="position:absolute; inset:0 0 120px 0; place-items:end start; padding:12px;"><span>배경: 불빛 앞 한정판 병 + 잔 (어둡게)</span></div>
+      <div class="center" style="position:absolute; top:80px; width:100%;">
+        <p class="label">2026 LIMITED</p>
+        <h2 class="serif" style="font-size:48px; margin:10px 0;">The Winter Batch</h2>
+        <p class="body">올겨울, 가장 오래 불 앞에 머문 통만 골랐습니다.</p>
+        <span class="btn" style="margin-top:20px;">FIND A STORE ↗</span>
+      </div>
+      <div style="position:absolute; left:0; right:0; bottom:0; height:120px; padding:18px 30px; background:#2c2e31;">
+        <div class="flex" style="justify-content:space-between;">
+          <span class="serif" style="font-size:14px;">CHARWELL</span>
+          <span class="note">본 페이지는 만 19세 이상을 위한 주류 정보입니다.</span>
+        </div>
+        <p style="margin-top:12px; padding:8px 10px; border:1px solid rgba(255,255,255,.35); font:500 11px/1.5 'Pretendard';">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다.</p>
+        <p class="note" style="margin-top:8px;">CHARWELL은 포트폴리오를 위한 가상 브랜드입니다.</p>
+      </div>
+      <span class="ix" style="position:absolute; right:30px; top:40px;">버튼 마그네틱 효과</span>
+    </div>
+  </div>
+  <div>
+    <p class="col-title">MOBILE</p>
+    <div class="frame dark" style="height:520px;">
+      <span class="tag">06</span>
+      <div class="img" style="position:absolute; inset:0 0 200px 0; place-items:end start; padding:10px;"><span>배경 이미지</span></div>
+      <div class="center" style="position:absolute; top:80px; width:100%; padding:0 16px;">
+        <p class="label">2026 LIMITED</p>
+        <h2 class="serif" style="font-size:30px; margin:8px 0;">The Winter Batch</h2>
+        <p class="body">올겨울, 가장 오래 불 앞에<br />머문 통만 골랐습니다.</p>
+        <span class="btn" style="margin-top:14px;">FIND A STORE ↗</span>
+      </div>
+      <div style="position:absolute; left:0; right:0; bottom:0; height:200px; padding:16px; background:#2c2e31;">
+        <span class="serif" style="font-size:13px;">CHARWELL</span>
+        <p class="note" style="margin-top:8px;">만 19세 이상을 위한 주류 정보입니다.</p>
+        <p style="margin-top:10px; padding:8px; border:1px solid rgba(255,255,255,.35); font:500 10px/1.5 'Pretendard';">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다.</p>
+        <p class="note" style="margin-top:8px;">가상 브랜드입니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
